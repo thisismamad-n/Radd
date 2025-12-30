@@ -1,7 +1,7 @@
-# Ask mode
+# حالت پرسش (Ask mode)
 
   <img src="images/askui.png" alt="Ask Mode" />
 
-Have a question about your code? Switch to Ask mode and type it out. Kilo Code will scan your codebase and give you a clear, accurate explanation.
+سوالی در مورد کد خود دارید؟ به حالت پرسش بروید و آن را تایپ کنید. دستیار راد پایگاه کد شما را اسکن می‌کند و توضیحی دقیق و شفاف ارائه می‌دهد.
 
-Tip: Reference specific files or functions for more precise answers.
+نکته: برای دریافت پاسخ‌های دقیق‌تر، به فایل‌ها یا توابع خاصی اشاره کنید.

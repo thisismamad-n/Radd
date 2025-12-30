@@ -1,15 +1,15 @@
-# Code mode
+# حالت کدنویسی (Code Mode)
 
-Describe what you want to build in the text area and press ⮐ Enter.
+آنچه می‌خواهید بسازید را در کادر متنی شرح دهید و کلید ⮐ Enter را فشار دهید.
 
-<img src="images/hn-nextjs.png" width='200' alt="Prompting Kilo Code to Build a Hacker News clone in Next.js" />
+<img src="images/hn-nextjs.png" width='200' alt="درخواست از دستیار راد برای ساخت کلون Hacker News" />
 
-The more context you give, the better the result. Include things like your tech stack, key features, or file names.
+هرچه زمینه بیشتری ارائه دهید، نتیجه بهتر خواهد بود. مواردی مانند پشته تکنولوژی، ویژگی‌های کلیدی یا نام فایل‌ها را ذکر کنید.
 
-_Example: Create a Hacker News clone in Next.js_
+_مثال: یک کلون از Hacker News با Next.js بساز_
 
-Kilo Code will write the code, generate the files, and run the project for you.
+دستیار راد کد را می‌نویسد، فایل‌ها را تولید می‌کند و پروژه را برای شما اجرا می‌کند.
 
-## Kilo Code has many Modes ...
+## دستیار راد حالت‌های بسیاری دارد ...
 
-<img src="images/modes.gif" width='200' alt="Kilo Code modes" />
+<img src="images/modes.gif" width='200' alt="حالت‌های دستیار راد" />

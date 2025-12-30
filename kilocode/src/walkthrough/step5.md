@@ -1,15 +1,15 @@
-# Improve your prompt
+# بهبود دستور (Prompt)
 
-Click the magic wand icon to make your prompt clearer and more complete. Kilo Code will rewrite it to get better results.
+روی آیکون عصای جادویی کلیک کنید تا دستور خود را شفاف‌تر و کامل‌تر کنید. دستیار راد آن را بازنویسی می‌کند تا نتایج بهتری بگیرید.
 
-# Add files or folders for context
+# افزودن فایل‌ها یا پوشه‌ها برای زمینه
 
-Mention files or folders in your prompt. Kilo Code will use them to better understand and respond to your request.
+فایل‌ها یا پوشه‌ها را در دستور خود ذکر کنید. دستیار راد از آن‌ها برای درک بهتر و پاسخ به درخواست شما استفاده می‌کند.
 
-Click the paperclip in the text area or use @ to add context.
+روی گیره کاغذ در کادر متنی کلیک کنید یا از @ برای افزودن زمینه استفاده کنید.
 
-# Add custom modes
+# افزودن حالت‌های سفارشی
 
-Go beyond the default modes by creating your own. Tailor them to your workflow with specific instructions or focus areas.
+با ایجاد حالت‌های خود، فراتر از حالت‌های پیش‌فرض بروید. آن‌ها را با دستورالعمل‌های خاص یا حوزه‌های تمرکز متناسب با گردش کار خود تنظیم کنید.
 
-Click mode switcher in the text area or use / to switch modes.
+روی تغییر دهنده حالت در کادر متنی کلیک کنید یا از / برای تغییر حالت‌ها استفاده کنید.

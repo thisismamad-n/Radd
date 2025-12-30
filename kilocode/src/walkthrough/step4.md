@@ -1,7 +1,7 @@
-# Architect mode
+# حالت معماری (Architect mode)
 
 <img src="images/design_patterns.png" alt="design patterns" />
 
-Need to plan before writing code? Switch to Architect mode and ask high-level questions about structure, patterns, or logic.
+قبل از نوشتن کد نیاز به برنامه‌ریزی دارید؟ به حالت معماری بروید و سوالات سطح بالا در مورد ساختار، الگوها یا منطق بپرسید.
 
-Use it to break down features, map out components, or design how everything should work before diving in.
+از آن برای شکستن ویژگی‌ها، نقشه‌برداری اجزا یا طراحی نحوه کارکرد همه چیز قبل از شروع استفاده کنید.

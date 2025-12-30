@@ -1,7 +1,7 @@
-# Debug mode
+# حالت اشکال‌زدایی (Debug mode)
 
   <img src="images/unknown_error_stripe_rb.png" alt="Fixing an Unknown Error" />
 
-Running into errors? Switch to Debug mode and describe the problem. Kilo Code will analyze the code, find the issue, and apply a fix.
+با خطا مواجه شده‌اید؟ به حالت اشکال‌زدایی بروید و مشکل را توضیح دهید. دستیار راد کد را تحلیل می‌کند، مشکل را پیدا می‌کند و اصلاحیه را اعمال می‌کند.
 
-You can paste error messages or point to a file. Kilo Code will take it from there.
+می‌توانید پیام‌های خطا را جایگذاری کنید یا به یک فایل اشاره کنید. دستیار راد بقیه کارها را انجام می‌دهد.

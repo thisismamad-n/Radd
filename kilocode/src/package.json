@@ -4,7 +4,7 @@
 	"description": "دستیار هوشمند کسب و کار",
 	"publisher": "radd-app",
 	"version": "4.140.2",
-	"icon": "assets/icons/logo-outline-black.png",
+	"icon": "assets/icons/radd.png",
 	"galleryBanner": {
 		"color": "#FFFFFF",
 		"theme": "light"
@@ -17,7 +17,7 @@
 		"workspace"
 	],
 	"author": {
-		"name": "Kilo Code"
+		"name": "Radd Team"
 	},
 	"repository": {
 		"type": "git",
