@@ -1,0 +1,673 @@
+{
+	"name": "radd-assistant",
+	"displayName": "Radd Assistant - دستیار راد",
+	"description": "دستیار هوشمند کسب و کار",
+	"publisher": "radd-app",
+	"version": "4.140.2",
+	"icon": "assets/icons/radd.png",
+	"galleryBanner": {
+		"color": "#FFFFFF",
+		"theme": "light"
+	},
+	"engines": {
+		"vscode": "^1.84.0",
+		"node": "20.19.2"
+	},
+	"extensionKind": [
+		"workspace"
+	],
+	"author": {
+		"name": "Radd Team"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Kilo-Org/kilocode"
+	},
+	"homepage": "https://kilo.ai",
+	"categories": [
+		"AI",
+		"Chat",
+		"Programming Languages",
+		"Education",
+		"Snippets",
+		"Testing"
+	],
+	"keywords": [
+		"kilo",
+		"claude",
+		"dev",
+		"mcp",
+		"openrouter",
+		"coding",
+		"agent",
+		"autonomous",
+		"chatgpt",
+		"sonnet",
+		"ai",
+		"llama",
+		"Kilo Code",
+		"kilocode"
+	],
+	"activationEvents": [
+		"onLanguage",
+		"onStartupFinished"
+	],
+	"main": "./dist/extension.js",
+	"contributes": {
+		"walkthroughs": [
+			{
+				"id": "kiloCodeWalkthrough",
+				"title": "5 ways Kilo Code helps you code",
+				"description": "You now have a personal AI coding assistant.",
+				"steps": [
+					{
+						"id": "welcome",
+						"title": "Write code for you",
+						"description": "Describe what you want to build. Kilo Code will write it from scratch, generate the files, and run them for you.",
+						"media": {
+							"markdown": "./dist/walkthrough/step1.md"
+						}
+					},
+					{
+						"id": "getting-started",
+						"title": "Understand your codebase",
+						"description": "Need clarity on how something works? Ask Kilo Code about any part of your files and get a clear explanation.",
+						"media": {
+							"markdown": "./dist/walkthrough/step2.md"
+						},
+						"content": {
+							"path": "./dist/walkthrough/step2.md"
+						}
+					},
+					{
+						"id": "modes",
+						"title": "Get things working again",
+						"description": "Stuck on an error? Kilo Code can find the issue, fix it, and get your code running.",
+						"media": {
+							"markdown": "./dist/walkthrough/step3.md"
+						}
+					},
+					{
+						"id": "code-actions",
+						"title": "Plan your logic",
+						"description": "Not sure where to start? Map out your logic and structure before writing a single line of code.",
+						"media": {
+							"markdown": "./dist/walkthrough/step4.md"
+						}
+					},
+					{
+						"id": "advanced-features",
+						"title": "And more",
+						"description": "Improve your prompt, add context, or create your own custom modes.",
+						"media": {
+							"markdown": "./dist/walkthrough/step5.md"
+						}
+					}
+				]
+			}
+		],
+		"viewsContainers": {
+			"activitybar": [
+				{
+					"id": "kilo-code-ActivityBar",
+					"title": "%views.activitybar.title%",
+					"icon": "assets/icons/kilo.png",
+					"darkIcon": "assets/icons/kilo-dark.png"
+				}
+			]
+		},
+		"views": {
+			"kilo-code-ActivityBar": [
+				{
+					"type": "webview",
+					"id": "radd-assistant.SidebarProvider",
+					"name": "%views.sidebar.name%",
+					"icon": "assets/icons/kilo.png",
+					"darkIcon": "assets/icons/kilo-dark.png"
+				}
+			]
+		},
+		"commands": [
+			{
+				"command": "radd-assistant.plusButtonClicked",
+				"title": "%command.newTask.title%",
+				"icon": "$(add)"
+			},
+			{
+				"command": "radd-assistant.mcpButtonClicked",
+				"title": "%command.mcpServers.title%",
+				"icon": "$(server)"
+			},
+			{
+				"command": "radd-assistant.importSettings",
+				"title": "%command.importSettings.title%",
+				"category": "%configuration.title%"
+			},
+			{
+				"command": "radd-assistant.exportSettings",
+				"title": "Export Settings",
+				"category": "%configuration.title%"
+			},
+			{
+				"command": "radd-assistant.promptsButtonClicked",
+				"title": "%command.prompts.title%",
+				"icon": "$(organization)"
+			},
+			{
+				"command": "radd-assistant.historyButtonClicked",
+				"title": "%command.history.title%",
+				"icon": "$(history)"
+			},
+			{
+				"command": "radd-assistant.marketplaceButtonClicked",
+				"title": "%command.marketplace.title%",
+				"icon": "$(extensions)"
+			},
+			{
+				"command": "radd-assistant.popoutButtonClicked",
+				"title": "%command.openInEditor.title%",
+				"icon": "$(link-external)"
+			},
+			{
+				"command": "radd-assistant.settingsButtonClicked",
+				"title": "%command.settings.title%",
+				"icon": "$(settings-gear)"
+			},
+			{
+				"command": "radd-assistant.helpButtonClicked",
+				"title": "%command.documentation.title%",
+				"icon": "$(question)"
+			},
+			{
+				"command": "radd-assistant.openInNewTab",
+				"title": "%command.openInNewTab.title%",
+				"category": "%configuration.title%"
+			},
+			{
+				"command": "radd-assistant.explainCode",
+				"title": "%command.explainCode.title%",
+				"category": "%configuration.title%"
+			},
+			{
+				"command": "radd-assistant.fixCode",
+				"title": "%command.fixCode.title%",
+				"category": "%configuration.title%"
+			},
+			{
+				"command": "radd-assistant.improveCode",
+				"title": "%command.improveCode.title%",
+				"category": "%configuration.title%"
+			},
+			{
+				"command": "radd-assistant.addToContext",
+				"title": "%command.addToContext.title%",
+				"category": "%configuration.title%"
+			},
+			{
+				"command": "radd-assistant.addToContextAndFocus",
+				"title": "Add to Context and Focus",
+				"category": "%configuration.title%"
+			},
+			{
+				"command": "radd-assistant.newTask",
+				"title": "%command.newTask.title%",
+				"category": "%configuration.title%"
+			},
+			{
+				"command": "radd-assistant.terminalAddToContext",
+				"title": "%command.terminal.addToContext.title%",
+				"category": "%extension.displayName%"
+			},
+			{
+				"command": "radd-assistant.terminalFixCommand",
+				"title": "%command.terminal.fixCommand.title%",
+				"category": "%extension.displayName%"
+			},
+			{
+				"command": "radd-assistant.terminalExplainCommand",
+				"title": "%command.terminal.explainCommand.title%",
+				"category": "%configuration.title%"
+			},
+			{
+				"command": "radd-assistant.generateTerminalCommand",
+				"title": "%command.terminal.generateCommand.title%",
+				"category": "%configuration.title%"
+			},
+			{
+				"command": "radd-assistant.setCustomStoragePath",
+				"title": "%command.setCustomStoragePath.title%",
+				"category": "%configuration.title%"
+			},
+			{
+				"command": "radd-assistant.focusChatInput",
+				"title": "%command.focusInput.title%",
+				"category": "%configuration.title%"
+			},
+			{
+				"command": "radd-assistant.acceptInput",
+				"title": "%command.acceptInput.title%",
+				"category": "%configuration.title%"
+			},
+			{
+				"command": "radd-assistant.profileButtonClicked",
+				"title": "%command.profile.title%",
+				"icon": "$(account)",
+				"category": "%configuration.title%"
+			},
+			{
+				"command": "radd-assistant.vsc.generateCommitMessage",
+				"title": "%command.generateCommitMessage.title%",
+				"icon": {
+					"light": "assets/icons/kilo-light.svg",
+					"dark": "assets/icons/kilo-dark.svg"
+				},
+				"category": "%configuration.title%"
+			},
+			{
+				"command": "radd-assistant.ghost.generateSuggestions",
+				"title": "%ghost.commands.generateSuggestions%",
+				"category": "%configuration.title%"
+			},
+			{
+				"command": "radd-assistant.ghost.cancelSuggestions",
+				"title": "%ghost.commands.cancelSuggestions%",
+				"category": "%configuration.title%"
+			},
+			{
+				"command": "radd-assistant.ghost.applyCurrentSuggestions",
+				"title": "%ghost.commands.applyCurrentSuggestion%",
+				"category": "%configuration.title%"
+			},
+			{
+				"command": "radd-assistant.ghost.applyAllSuggestions",
+				"title": "%ghost.commands.applyAllSuggestions%",
+				"category": "%configuration.title%"
+			},
+			{
+				"command": "radd-assistant.ghost.goToNextSuggestion",
+				"title": "%ghost.commands.goToNextSuggestion%",
+				"category": "%configuration.title%"
+			},
+			{
+				"command": "radd-assistant.ghost.goToPreviousSuggestion",
+				"title": "%ghost.commands.goToPreviousSuggestion%",
+				"category": "%configuration.title%"
+			},
+			{
+				"command": "radd-assistant.agentManagerOpen",
+				"title": "Open Agent Manager",
+				"icon": "$(circuit-board)",
+				"category": "%configuration.title%"
+			}
+		],
+		"menus": {
+			"editor/context": [
+				{
+					"submenu": "radd-assistant.contextMenu",
+					"group": "1"
+				}
+			],
+			"radd-assistant.contextMenu": [
+				{
+					"command": "radd-assistant.explainCode",
+					"group": "1_actions@1"
+				},
+				{
+					"command": "radd-assistant.fixCode",
+					"group": "1_actions@2"
+				},
+				{
+					"command": "radd-assistant.improveCode",
+					"group": "1_actions@3"
+				},
+				{
+					"command": "radd-assistant.addToContext",
+					"group": "1_actions@4"
+				}
+			],
+			"terminal/context": [
+				{
+					"submenu": "radd-assistant.terminalMenu",
+					"group": "2"
+				}
+			],
+			"radd-assistant.terminalMenu": [
+				{
+					"command": "radd-assistant.terminalAddToContext",
+					"group": "1_actions@1"
+				},
+				{
+					"command": "radd-assistant.terminalFixCommand",
+					"group": "1_actions@2"
+				},
+				{
+					"command": "radd-assistant.terminalExplainCommand",
+					"group": "1_actions@3"
+				}
+			],
+			"view/title": [
+				{
+					"command": "radd-assistant.plusButtonClicked",
+					"group": "navigation@0",
+					"when": "view == radd-assistant.SidebarProvider"
+				},
+				{
+					"command": "radd-assistant.agentManagerOpen",
+					"group": "navigation@1",
+					"when": "view == radd-assistant.SidebarProvider"
+				},
+				{
+					"command": "radd-assistant.mcpButtonClicked",
+					"group": "navigation@2",
+					"when": "view == radd-assistant.SidebarProvider"
+				},
+				{
+					"command": "radd-assistant.marketplaceButtonClicked",
+					"group": "navigation@3",
+					"when": "view == radd-assistant.SidebarProvider"
+				},
+				{
+					"command": "radd-assistant.historyButtonClicked",
+					"group": "navigation@4",
+					"when": "view == radd-assistant.SidebarProvider"
+				},
+				{
+					"command": "radd-assistant.profileButtonClicked",
+					"group": "navigation@5",
+					"when": "view == radd-assistant.SidebarProvider"
+				},
+				{
+					"command": "radd-assistant.settingsButtonClicked",
+					"group": "navigation@6",
+					"when": "view == radd-assistant.SidebarProvider"
+				},
+				{
+					"command": "radd-assistant.popoutButtonClicked",
+					"group": "navigation@7",
+					"when": "view == radd-assistant.SidebarProvider"
+				},
+				{
+					"command": "radd-assistant.helpButtonClicked",
+					"group": "navigation@8",
+					"when": "false && view == radd-assistant.SidebarProvider"
+				}
+			],
+			"editor/title": [
+				{
+					"command": "radd-assistant.plusButtonClicked",
+					"group": "navigation@1",
+					"when": "activeWebviewPanelId == radd-assistant.TabPanelProvider"
+				},
+				{
+					"command": "radd-assistant.mcpButtonClicked",
+					"group": "navigation@2",
+					"when": "activeWebviewPanelId == radd-assistant.TabPanelProvider"
+				},
+				{
+					"command": "radd-assistant.historyButtonClicked",
+					"group": "navigation@3",
+					"when": "activeWebviewPanelId == radd-assistant.TabPanelProvider"
+				},
+				{
+					"command": "radd-assistant.popoutButtonClicked",
+					"group": "navigation@4",
+					"when": "activeWebviewPanelId == radd-assistant.TabPanelProvider"
+				},
+				{
+					"command": "radd-assistant.settingsButtonClicked",
+					"group": "navigation@5",
+					"when": "activeWebviewPanelId == radd-assistant.TabPanelProvider"
+				},
+				{
+					"command": "radd-assistant.helpButtonClicked",
+					"group": "navigation@6",
+					"when": "activeWebviewPanelId == radd-assistant.TabPanelProvider"
+				}
+			],
+			"scm/input": [
+				{
+					"command": "radd-assistant.vsc.generateCommitMessage",
+					"group": "navigation"
+				}
+			],
+			"scm/title": [
+				{
+					"command": "radd-assistant.vsc.generateCommitMessage",
+					"when": "scmProvider == git",
+					"group": "navigation"
+				}
+			]
+		},
+		"keybindings": [
+			{
+				"command": "radd-assistant.focusChatInput",
+				"key": "ctrl+shift+a",
+				"mac": "cmd+shift+a",
+				"when": "true"
+			},
+			{
+				"command": "radd-assistant.ghost.cancelSuggestions",
+				"key": "escape",
+				"when": "editorTextFocus && !editorTabMovesFocus && !inSnippetMode && kilocode.ghost.hasSuggestions"
+			},
+			{
+				"command": "radd-assistant.ghost.generateSuggestions",
+				"key": "ctrl+l",
+				"mac": "cmd+l",
+				"when": "editorTextFocus && !editorTabMovesFocus && !inSnippetMode && kilocode.ghost.enableSmartInlineTaskKeybinding && !github.copilot.completions.enabled"
+			},
+			{
+				"command": "radd-assistant.ghost.showIncompatibilityExtensionPopup",
+				"key": "ctrl+l",
+				"mac": "cmd+l",
+				"when": "editorTextFocus && !editorTabMovesFocus && !inSnippetMode && kilocode.ghost.enableSmartInlineTaskKeybinding && github.copilot.completions.enabled"
+			},
+			{
+				"command": "radd-assistant.generateTerminalCommand",
+				"key": "ctrl+shift+g",
+				"mac": "cmd+shift+g"
+			},
+			{
+				"command": "radd-assistant.addToContext",
+				"key": "cmd+k cmd+a",
+				"mac": "cmd+k cmd+a",
+				"win": "ctrl+k ctrl+a",
+				"linux": "ctrl+k ctrl+a",
+				"when": "editorTextFocus && editorHasSelection"
+			},
+			{
+				"command": "radd-assistant.addToContextAndFocus",
+				"key": "ctrl+i",
+				"mac": "cmd+i",
+				"win": "ctrl+i",
+				"linux": "ctrl+i",
+				"when": "editorTextFocus && !github.copilot.completions.enabled && kilocode.ghost.enableQuickInlineTaskKeybinding"
+			},
+			{
+				"command": "radd-assistant.ghost.showIncompatibilityExtensionPopup",
+				"key": "ctrl+i",
+				"mac": "cmd+i",
+				"when": "editorTextFocus && github.copilot.completions.enabled && kilocode.ghost.enableQuickInlineTaskKeybinding"
+			},
+			{
+				"command": "radd-assistant.toggleAutoApprove",
+				"key": "cmd+alt+a",
+				"mac": "cmd+alt+a",
+				"win": "ctrl+alt+a",
+				"linux": "ctrl+alt+a"
+			}
+		],
+		"submenus": [
+			{
+				"id": "radd-assistant.contextMenu",
+				"label": "%views.contextMenu.label%"
+			},
+			{
+				"id": "radd-assistant.terminalMenu",
+				"label": "%views.terminalMenu.label%"
+			}
+		],
+		"configuration": {
+			"title": "%configuration.title%",
+			"properties": {
+				"radd-assistant.allowedCommands": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					},
+					"default": [
+						"git log",
+						"git diff",
+						"git show"
+					],
+					"description": "%commands.allowedCommands.description%"
+				},
+				"radd-assistant.deniedCommands": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					},
+					"default": [],
+					"description": "%commands.deniedCommands.description%"
+				},
+				"radd-assistant.commandExecutionTimeout": {
+					"type": "number",
+					"default": 0,
+					"minimum": 0,
+					"maximum": 600,
+					"description": "%commands.commandExecutionTimeout.description%"
+				},
+				"radd-assistant.commandTimeoutAllowlist": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					},
+					"default": [],
+					"description": "%commands.commandTimeoutAllowlist.description%"
+				},
+				"radd-assistant.preventCompletionWithOpenTodos": {
+					"type": "boolean",
+					"default": false,
+					"description": "%commands.preventCompletionWithOpenTodos.description%"
+				},
+				"radd-assistant.vsCodeLmModelSelector": {
+					"type": "object",
+					"properties": {
+						"vendor": {
+							"type": "string",
+							"description": "%settings.vsCodeLmModelSelector.vendor.description%"
+						},
+						"family": {
+							"type": "string",
+							"description": "%settings.vsCodeLmModelSelector.family.description%"
+						}
+					},
+					"description": "%settings.vsCodeLmModelSelector.description%"
+				},
+				"radd-assistant.customStoragePath": {
+					"type": "string",
+					"default": "",
+					"description": "%settings.customStoragePath.description%"
+				},
+				"radd-assistant.enableCodeActions": {
+					"type": "boolean",
+					"default": true,
+					"description": "%settings.enableCodeActions.description%"
+				},
+				"radd-assistant.autoImportSettingsPath": {
+					"type": "string",
+					"default": "",
+					"description": "%settings.autoImportSettingsPath.description%"
+				},
+				"radd-assistant.maximumIndexedFilesForFileSearch": {
+					"type": "number",
+					"default": 10000,
+					"minimum": 5000,
+					"maximum": 500000,
+					"description": "%settings.maximumIndexedFilesForFileSearch.description%"
+				},
+				"radd-assistant.useAgentRules": {
+					"type": "boolean",
+					"default": true,
+					"description": "%settings.useAgentRules.description%"
+				},
+				"radd-assistant.apiRequestTimeout": {
+					"type": "number",
+					"default": 600,
+					"minimum": 0,
+					"maximum": 86400,
+					"description": "%settings.apiRequestTimeout.description%"
+				},
+				"radd-assistant.newTaskRequireTodos": {
+					"type": "boolean",
+					"default": false,
+					"description": "%settings.newTaskRequireTodos.description%"
+				},
+				"radd-assistant.enableSettingsSync": {
+					"type": "boolean",
+					"default": true,
+					"description": "%settings.enableSettingsSync.description%"
+				},
+				"radd-assistant.codeIndex.embeddingBatchSize": {
+					"type": "number",
+					"default": 60,
+					"minimum": 1,
+					"maximum": 200,
+					"description": "%settings.codeIndex.embeddingBatchSize.description%"
+				},
+				"radd-assistant.toolProtocol": {
+					"type": "string",
+					"enum": [
+						"xml",
+						"native"
+					],
+					"default": "xml",
+					"description": "%settings.toolProtocol.description%"
+				},
+				"radd-assistant.debug": {
+					"type": "boolean",
+					"default": false,
+					"description": "%settings.debug.description%"
+				}
+			}
+		},
+		"icons": {
+			"kilo-logo": {
+				"description": "Kilo Code logo",
+				"default": {
+					"fontPath": "assets/icons/kilo-icon-font.woff2",
+					"fontCharacter": "\\F101"
+				}
+			}
+		},
+		"codeActions": [
+			{
+				"languages": [
+					"*"
+				],
+				"providedCodeActionKinds": [
+					"vscode.CodeActionKind.QuickFix"
+				]
+			}
+		]
+	},
+	"scripts": {
+		"lint": "eslint . --ext=ts --max-warnings=0",
+		"check-types": "tsc --noEmit",
+		"pretest": "turbo run kilo-code#bundle --cwd ..",
+		"test": "vitest run",
+		"format": "prettier --write .",
+		"bundle": "node esbuild.mjs",
+		"vscode:prepublish": "pnpm bundle --production",
+		"vsix:clean": "rimraf ../bin",
+		"vsix": "mkdirp ../bin && vsce package --no-dependencies --out ../bin",
+		"vsix:unpacked": "mkdirp ../bin-unpacked && unzip -q -o ../bin/kilo-code-*.vsix -d ../bin-unpacked",
+		"publish:marketplace": "vsce publish --no-dependencies && ovsx publish --no-dependencies",
+		"watch:bundle": "pnpm bundle --watch",
+		"watch:tsc": "cd .. && tsc --noEmit --watch --project src/tsconfig.json",
+		"clean": "rimraf README.md CHANGELOG.md LICENSE dist logs mock .turbo"
+	},
+	"dependencies": {
+		"@lancedb/lancedb": "^0.21.2"
+	}
+}
