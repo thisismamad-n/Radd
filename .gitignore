@@ -1,0 +1,41 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Build outputs
+out/
+dist/
+.build/
+.radd/
+.kilocode/
+tmp/
+artifacts/
+
+# System
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.vscode-test/
+*.code-workspace
+
+# Logs
+*.log
+
+# Environment
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Void specific
+void/.build/
+void/out/
+void/dist/
+
+# Kilocode specific
+kilocode/dist/
+kilocode/out/
+kilocode/bin/
