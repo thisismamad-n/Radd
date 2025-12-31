@@ -1,0 +1,22 @@
+{
+	"$schema": "vscode://schemas/settings/user",
+	"_comment": "Radd Assistant Default Settings - Optimized for Persian Business Users",
+	
+	"workbench.startupEditor": "welcomePage",
+	"workbench.colorTheme": "Default Dark+",
+	"workbench.iconTheme": "vs-seti",
+	"workbench.activityBar.visible": true,
+	"workbench.activityBar.location": "default",
+	"workbench.sideBar.location": "right",
+	"workbench.panel.defaultLocation": "bottom",
+	"workbench.panel.opensMaximized": "never",
+	"workbench.tips.enabled": false,
+	"workbench.welcomePage.walkthroughs.openOnInstall": true,
+	"workbench.editor.showTabs": "multiple",
+	"workbench.editor.enablePreview": true,
+	"workbench.editor.highlightModifiedTabs": true,
+	"workbench.editor.tabCloseButton": "right",
+	"workbench.statusBar.visible": true,
+	"workbench.layoutControl.enabled": false,
+	"workbench.tree.indent": 20,
+	"workbe

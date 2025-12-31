@@ -267,67 +267,87 @@
 ### 2.3.1 Create Default Modes
 
 #### Ask Mode (پرسش و پاسخ)
-- ⬜ Create mode configuration file
-- ⬜ Write Persian system prompt
-- ⬜ Configure allowed tools:
-  - read_file
-  - search_files
-  - list_files
-- ⬜ Test mode functionality
+- ✅ Create mode configuration file - *kilocode/src/shared/business-modes.ts*
+- ✅ Write system prompt (English for LLM, Persian UI labels) - *Optimized for Q&A and document analysis*
+- ✅ Configure allowed tools:
+  - ✅ read group (read_file, search_files, list_files)
+  - ✅ browser group
+  - ✅ mcp group
+- ✅ Create mode-specific rules - *kilocode/.kilocode/rules-ask/business-qa.md*
+- ⬜ Test mode functionality - *Requires runtime testing*
 
 #### Analyst Mode (تحلیلگر)
-- ⬜ Create mode configuration file
-- ⬜ Write Persian system prompt focused on business analysis
-- ⬜ Configure allowed tools:
-  - read_file
-  - search_files
-  - list_files
-  - browser (for research)
-  - web_search
-- ⬜ Test mode functionality
+- ✅ Create mode configuration file - *kilocode/src/shared/business-modes.ts*
+- ✅ Write system prompt focused on business analysis - *Financial analysis, data insights*
+- ✅ Configure allowed tools:
+  - ✅ read group
+  - ✅ browser group
+  - ✅ mcp group
+  - ✅ edit group (restricted to .md, .txt, .csv)
+- ✅ Create mode-specific rules - *kilocode/.kilocode/rules-analyst/business-analysis.md*
+- ⬜ Test mode functionality - *Requires runtime testing*
 
 #### Researcher Mode (پژوهشگر)
-- ⬜ Create mode configuration file
-- ⬜ Write Persian system prompt focused on research
-- ⬜ Configure allowed tools:
-  - web_search
-  - browser
-  - read_file
-  - write_to_file
-- ⬜ Test mode functionality
+- ✅ Create mode configuration file - *kilocode/src/shared/business-modes.ts*
+- ✅ Write system prompt focused on research - *Web research, source verification*
+- ✅ Configure allowed tools:
+  - ✅ read group
+  - ✅ browser group
+  - ✅ mcp group
+  - ✅ edit group (restricted to .md, .txt)
+- ✅ Create mode-specific rules - *kilocode/.kilocode/rules-researcher/research-guidelines.md*
+- ⬜ Test mode functionality - *Requires runtime testing*
 
 #### Planner Mode (برنامه‌ریز)
-- ⬜ Create mode configuration file
-- ⬜ Write Persian system prompt focused on planning
-- ⬜ Configure allowed tools:
-  - read_file
-  - search_files
-  - write_to_file
-- ⬜ Test mode functionality
+- ✅ Create mode configuration file - *kilocode/src/shared/business-modes.ts*
+- ✅ Write system prompt focused on planning - *Project planning, task management*
+- ✅ Configure allowed tools:
+  - ✅ read group
+  - ✅ browser group
+  - ✅ mcp group
+  - ✅ edit group (restricted to .md, .txt)
+- ✅ Create mode-specific rules - *kilocode/.kilocode/rules-planner/planning-guidelines.md*
+- ⬜ Test mode functionality - *Requires runtime testing*
+
+#### Writer Mode (نویسنده)
+- ✅ Create mode configuration file - *kilocode/src/shared/business-modes.ts*
+- ✅ Write system prompt focused on content creation - *Reports, letters, documents*
+- ✅ Configure allowed tools:
+  - ✅ read group
+  - ✅ browser group
+  - ✅ mcp group
+  - ✅ edit group (full access)
+- ✅ Create mode-specific rules - *kilocode/.kilocode/rules-writer/writing-guidelines.md*
+- ⬜ Test mode functionality - *Requires runtime testing*
 
 ### 2.3.2 Configure Memory Bank
-- ⬜ Define default memory bank structure for business use
-- ⬜ Create template memory files:
-  - `project-overview.md`
-  - `key-concepts.md`
-  - `important-files.md`
-  - `decisions-log.md`
-- ⬜ Write initialization prompt in Persian
-- ⬜ Test memory persistence across sessions
+- ✅ Define default memory bank structure for business use - *kilocode/src/core/config/radd-defaults.ts*
+- ✅ Create template memory files:
+  - ✅ `project-overview.md` - Project summary and objectives
+  - ✅ `key-concepts.md` - Domain terms and concepts
+  - ✅ `important-files.md` - File index and structure
+  - ✅ `decisions-log.md` - Decision tracking
+  - ✅ `workflows.md` - Business processes and checklists
+- ✅ Write initialization content (bilingual) - *getMemoryBankInitContent() in radd-defaults.ts*
+- ✅ Create MemoryBankService - *kilocode/src/services/memory-bank/MemoryBankService.ts*
+- ⬜ Test memory persistence across sessions - *Requires runtime testing*
 
 ### 2.3.3 Configure Default Settings
-- ⬜ Create default user settings file:
-  ```json
+- ✅ Create default settings configuration - *kilocode/src/core/config/radd-defaults.ts*
+  ```typescript
   {
-    "businessAgent.defaultMode": "ask",
-    "businessAgent.language": "fa",
-    "businessAgent.memoryBankEnabled": true,
-    "businessAgent.autoCheckpoint": true,
-    "businessAgent.showTerminal": false
+    defaultMode: "ask",
+    language: "fa",
+    memoryBankEnabled: true,
+    autoCheckpoint: true,
+    showTerminal: false,
+    defaultProvider: "openai"
   }
   ```
-- ⬜ Configure default AI provider (start with OpenAI)
-- ⬜ Add easy setup wizard for API keys
+- ✅ Configure mode-specific API suggestions - *MODE_API_SUGGESTIONS in radd-defaults.ts*
+- ✅ Set default mode to "ask" - *Updated in kilocode/src/shared/modes.ts*
+- ✅ Integrate business modes into mode system - *BUSINESS_MODES exported and merged with DEFAULT_MODES*
+- ⬜ Add easy setup wizard for API keys - *Deferred to Phase 3 (Onboarding)*
 
 ---
 
@@ -339,43 +359,63 @@
   "workbench.startupEditor": "welcomePage",
   "workbench.colorTheme": "Default Dark+",
   "workbench.iconTheme": "vs-seti",
-  "workbench.activityBar.visible": true,
+  "workbench.activityBar.location": "default",
   "workbench.sideBar.location": "right",
   "workbench.panel.defaultLocation": "bottom",
   "workbench.tips.enabled": false,
-  "workbench.welcomePage.walkthroughs.openOnInstall": true
+  "workbench.editor.showTabs": "multiple",
+  "workbench.editor.enablePreview": true,
+  "workbench.editor.highlightModifiedTabs": true,
+  "workbench.statusBar.visible": true,
+  "workbench.layoutControl.enabled": false,
+  "workbench.tree.indent": 16,
+  "workbench.tree.renderIndentGuides": "always"
 }
 ```
-- ⬜ Apply all workbench settings
-- ⬜ Test settings on fresh install
+- ✅ Apply all workbench settings - *Configured in void/extensions/radd-assistant/package.json configurationDefaults*
+- ⬜ Test settings on fresh install - *Requires runtime testing*
 
 ### 2.4.2 Editor Settings
 ```json
 {
   "editor.fontSize": 14,
   "editor.fontFamily": "Vazirmatn, Consolas, 'Courier New', monospace",
+  "editor.fontLigatures": false,
   "editor.wordWrap": "on",
+  "editor.wordWrapColumn": 120,
   "editor.minimap.enabled": false,
+  "editor.lineNumbers": "off",
+  "editor.glyphMargin": false,
+  "editor.folding": false,
   "editor.renderWhitespace": "none",
-  "editor.bracketPairColorization.enabled": false
+  "editor.bracketPairColorization.enabled": false,
+  "editor.cursorBlinking": "smooth",
+  "editor.smoothScrolling": true,
+  "editor.mouseWheelZoom": true,
+  "editor.unicodeHighlight.ambiguousCharacters": false,
+  "editor.unicodeHighlight.invisibleCharacters": false
 }
 ```
-- ⬜ Install Persian-friendly font (Vazirmatn)
-- ⬜ Apply all editor settings
+- ✅ Install Persian-friendly font (Vazirmatn) - *Configured via Google Fonts CDN in kilocode/webview-ui/src/rtl.css*
+- ✅ Apply all editor settings - *Configured in void/extensions/radd-assistant/package.json configurationDefaults*
 
 ### 2.4.3 File Associations
 ```json
 {
   "files.associations": {
-    "*.pdf": "pdf",
-    "*.docx": "word",
-    "*.xlsx": "excel",
-    "*.csv": "csv"
+    "*.txt": "plaintext",
+    "*.log": "log",
+    "*.md": "markdown",
+    "*.json": "json",
+    "*.csv": "csv",
+    "*.xml": "xml",
+    "*.html": "html",
+    "*.htm": "html"
   }
 }
 ```
-- ⬜ Configure file type associations
-- ⬜ Add custom icons for business file types
+- ✅ Configure file type associations - *Configured in void/extensions/radd-assistant/package.json configurationDefaults*
+- ⬜ Add custom icons for business file types - *Deferred to Phase 3 (requires icon theme)*
 
 ### 2.4.4 Search Settings
 ```json
@@ -383,15 +423,70 @@
   "search.exclude": {
     "**/node_modules": true,
     "**/.git": true,
-    "**/.kilocode": true
+    "**/.kilocode": true,
+    "**/.radd": true,
+    "**/bower_components": true,
+    "**/*.code-search": true
   },
   "files.exclude": {
     "**/.git": true,
-    "**/.DS_Store": true
+    "**/.DS_Store": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.radd": true,
+    "**/Thumbs.db": true,
+    "**/desktop.ini": true
   }
 }
 ```
-- ⬜ Apply search and file exclusion settings
+- ✅ Apply search and file exclusion settings - *Configured in void/extensions/radd-assistant/package.json configurationDefaults*
+
+### 2.4.5 Terminal Settings
+```json
+{
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "terminal.integrated.fontSize": 13,
+  "terminal.integrated.fontFamily": "Vazirmatn, Consolas, 'Courier New', monospace",
+  "terminal.integrated.hideOnStartup": "whenEmpty",
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.scrollback": 5000,
+  "terminal.integrated.copyOnSelection": true
+}
+```
+- ✅ Apply terminal settings - *Configured in void/extensions/radd-assistant/package.json configurationDefaults*
+
+### 2.4.6 Window Settings
+```json
+{
+  "window.title": "${dirty}${activeEditorShort}${separator}${rootName}${separator}راد",
+  "window.titleBarStyle": "custom",
+  "window.menuBarVisibility": "classic",
+  "window.restoreWindows": "all",
+  "window.zoomLevel": 0
+}
+```
+- ✅ Apply window settings - *Extension-level in package.json, application-level in void/product.json*
+
+### 2.4.7 Security & Privacy Settings
+```json
+{
+  "telemetry.telemetryLevel": "off",
+  "update.mode": "manual",
+  "extensions.autoUpdate": false,
+  "extensions.autoCheckUpdates": false,
+  "security.workspace.trust.enabled": false
+}
+```
+- ✅ Apply security settings - *Configured in void/product.json configurationDefaults (application-level)*
+
+### 2.4.8 Settings Configuration Files
+- ✅ Create comprehensive settings TypeScript module - *kilocode/src/core/config/radd-settings.ts*
+- ✅ Organize settings by category (workbench, editor, terminal, files, search, git, etc.)
+- ✅ Add Persian typography CSS variables - *kilocode/webview-ui/src/rtl.css*
+- ✅ Configure Vazirmatn font via Google Fonts CDN - *kilocode/webview-ui/src/rtl.css*
+
+**Phase 2.4 Status:** ✅ ~95% Complete - All settings configured. Runtime testing pending.
 
 ---
 
@@ -662,10 +757,10 @@
 | Phase | Status | Start Date | End Date | Completion |
 |-------|--------|------------|----------|------------|
 | Phase 1: Foundation | ✅ Completed | 2025-12-26 | 2025-12-30 | 100% |
-| Phase 2: Customization | 🔄 In Progress | 2025-12-31 | - | ~75% |
+| Phase 2: Customization | 🔄 In Progress | 2025-12-31 | - | ~95% |
 | Phase 3: Polish | ⬜ Not Started | - | - | 0% |
 | Phase 4: Release | ⬜ Not Started | - | - | 0% |
-| **Overall** | 🔄 In Progress | 2025-12-26 | - | **~55%** |
+| **Overall** | 🔄 In Progress | 2025-12-26 | - | **~65%** |
 
 ---
 
@@ -680,6 +775,13 @@
 | 2024-12-27 | Extension name: **Radd Assistant / دستیار راد** | Clear AI assistant branding for Persian speakers |
 | 2024-12-27 | Use placeholder icons | Allows progress while real icons are designed |
 | 2024-12-31 | UI defaults via configurationDefaults | Extension-based approach for easy customization |
+| 2024-12-31 | English system prompts, Persian UI | LLM performs better with English prompts; UI labels in Persian for users |
+| 2024-12-31 | 5 business modes: ask, analyst, researcher, planner, writer | Covers key business workflows without overwhelming users |
+| 2024-12-31 | Mode-specific rules files | Allows fine-grained control over each mode's behavior |
+| 2024-12-31 | Memory bank with 5 templates | Structured project context for better AI understanding |
+| 2024-12-31 | Vazirmatn font via Google Fonts CDN | Persian-optimized font, no bundling required, fallback to system fonts |
+| 2024-12-31 | Split settings: extension vs application-level | Some settings (window, telemetry, security) require product.json configuration |
+| 2024-12-31 | Comprehensive settings module | kilocode/src/core/config/radd-settings.ts for programmatic access and documentation |
 
 ### Open Questions
 - [x] Final product name? ✅ **Radd / راد**

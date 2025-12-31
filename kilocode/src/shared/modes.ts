@@ -15,6 +15,7 @@ import { addCustomInstructions } from "../core/prompts/sections/custom-instructi
 
 import { EXPERIMENT_IDS } from "./experiments"
 import { TOOL_GROUPS, ALWAYS_AVAILABLE_TOOLS } from "./tools"
+import { BUSINESS_MODES, DEFAULT_BUSINESS_MODE } from "./business-modes"
 
 export type Mode = string
 
@@ -61,10 +62,12 @@ export function getToolsForMode(groups: readonly GroupEntry[]): string[] {
 }
 
 // Main modes configuration as an ordered array
-export const modes = DEFAULT_MODES
+// radd_change: Include business modes alongside default modes
+export const modes: readonly ModeConfig[] = [...BUSINESS_MODES, ...DEFAULT_MODES]
 
 // Export the default mode slug
-export const defaultModeSlug = "code" // kilocode_change: set default to code
+// radd_change: Set default to business "ask" mode for Radd Assistant
+export const defaultModeSlug = DEFAULT_BUSINESS_MODE
 
 // Helper functions
 export function getModeBySlug(slug: string, customModes?: ModeConfig[]): ModeConfig | undefined {

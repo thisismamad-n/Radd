@@ -1,7 +1,38 @@
 /**
  * RTL (Right-to-Left) Support for Persian/Farsi
  * پشتیبانی از راست به چپ برای زبان فارسی
+ * 
+ * Vazirmatn Font: https://github.com/rastikerdar/vazirmatn
+ * A Persian/Arabic font optimized for screen display
  */
+
+/* Vazirmatn Font - Google Fonts CDN */
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* Fallback font-face for offline use */
+@font-face {
+  font-family: 'Vazirmatn';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Vazirmatn'), local('Vazirmatn-Regular');
+}
+
+@font-face {
+  font-family: 'Vazirmatn';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Vazirmatn Bold'), local('Vazirmatn-Bold');
+}
+
+/* CSS Custom Properties for Persian Typography */
+:root {
+  --font-family-persian: 'Vazirmatn', 'Tahoma', 'Arial', sans-serif;
+  --font-family-mono-persian: 'Vazirmatn', 'Consolas', 'Courier New', monospace;
+  --line-height-persian: 1.8;
+  --letter-spacing-persian: 0.01em;
+}
 
 /* RTL Base Styles */
 [dir="rtl"],
@@ -136,8 +167,31 @@
 /* Persian/Farsi specific font settings */
 [lang="fa"],
 [dir="rtl"] {
-  font-family: 'Vazirmatn', 'Tahoma', 'Arial', sans-serif;
-  line-height: 1.8;
+  font-family: var(--font-family-persian, 'Vazirmatn', 'Tahoma', 'Arial', sans-serif);
+  line-height: var(--line-height-persian, 1.8);
+  letter-spacing: var(--letter-spacing-persian, 0.01em);
+}
+
+/* Persian text in specific elements */
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3,
+[dir="rtl"] h4,
+[dir="rtl"] h5,
+[dir="rtl"] h6 {
+  font-family: var(--font-family-persian);
+  font-weight: 700;
+}
+
+[dir="rtl"] p,
+[dir="rtl"] span,
+[dir="rtl"] div {
+  font-family: var(--font-family-persian);
+}
+
+/* Monospace Persian font for code-adjacent text */
+[dir="rtl"] .mono-persian {
+  font-family: var(--font-family-mono-persian);
 }
 
 /* Ensure numbers display correctly in RTL */

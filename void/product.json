@@ -41,8 +41,23 @@
 		"https://voideditor.com",
 		"https://voideditor.dev",
 		"https://github.com/voideditor/void",
-		"https://ollama.com"
+		"https://ollama.com",
+		"https://fonts.googleapis.com",
+		"https://fonts.gstatic.com"
 	],
 	"defaultLocale": "fa",
-	"supportedLocales": ["en", "fa"]
+	"supportedLocales": ["en", "fa"],
+	"configurationDefaults": {
+		"window.titleBarStyle": "custom",
+		"window.menuBarVisibility": "classic",
+		"window.enableMenuBarMnemonics": true,
+		"window.newWindowDimensions": "default",
+		"window.restoreWindows": "all",
+		"files.hotExit": "onExitAndWindowClose",
+		"telemetry.telemetryLevel": "off",
+		"update.mode": "manual",
+		"extensions.autoUpdate": false,
+		"extensions.autoCheckUpdates": false,
+		"security.workspace.trust.enabled": false
+	}
 }
