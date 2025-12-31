@@ -1,0 +1,69 @@
+{
+	"type-group": {
+		"modes": "حالت‌ها",
+		"mcps": "سرورهای MCP",
+		"match": "تطابق"
+	},
+	"item-card": {
+		"type-mode": "حالت",
+		"type-mcp": "سرور MCP",
+		"type-other": "سایر",
+		"by-author": "توسط {{author}}",
+		"authors-profile": "پروفایل نویسنده",
+		"remove-tag-filter": "حذف فیلتر برچسب: {{tag}}",
+		"filter-by-tag": "فیلتر بر اساس برچسب: {{tag}}",
+		"component-details": "جزئیات کامپوننت",
+		"view": "مشاهده",
+		"source": "منبع"
+	},
+	"filters": {
+		"search": {
+			"placeholder": "جستجو در فروشگاه..."
+		},
+		"type": {
+			"label": "نوع",
+			"all": "همه انواع",
+			"mode": "حالت",
+			"mcpServer": "سرور MCP"
+		},
+		"sort": {
+			"label": "مرتب‌سازی بر اساس",
+			"name": "نام",
+			"lastUpdated": "آخرین به‌روزرسانی"
+		},
+		"tags": {
+			"label": "برچسب‌ها",
+			"clear": "پاک کردن برچسب‌ها",
+			"placeholder": "جستجوی برچسب‌ها...",
+			"noResults": "برچسبی یافت نشد.",
+			"selected": "نمایش موارد با هر یک از برچسب‌های انتخاب شده"
+		},
+		"installed": {
+			"label": "فیلتر بر اساس وضعیت",
+			"all": "همه موارد",
+			"installed": "نصب شده",
+			"notInstalled": "نصب نشده"
+		},
+		"title": "فروشگاه"
+	},
+	"done": "انجام شد",
+	"tabs": {
+		"installed": "نصب شده",
+		"browse": "مرور",
+		"settings": "تنظیمات"
+	},
+	"items": {
+		"empty": {
+			"noItems": "موردی در فروشگاه یافت نشد.",
+			"emptyHint": "فیلترها یا عبارات جستجو را تنظیم کنید"
+		}
+	},
+	"installation": {
+		"installing": "در حال نصب مورد: \"{{itemName}}\"",
+		"installSuccess": "\"{{itemName}}\" با موفقیت نصب شد",
+		"installError": "نصب \"{{itemName}}\" ناموفق بود: {{errorMessage}}",
+		"removing": "در حال حذف مورد: \"{{itemName}}\"",
+		"removeSuccess": "\"{{itemName}}\" با موفقیت حذف شد",
+		"removeError": "حذف \"{{itemName}}\" ناموفق بود: {{errorMessage}}"
+	}
+}

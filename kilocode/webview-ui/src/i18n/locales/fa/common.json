@@ -1,0 +1,129 @@
+{
+	"errorBoundary": {
+		"title": "مشکلی پیش آمد",
+		"reportText": "لطفاً این مشکل را در GitHub گزارش دهید:",
+		"githubText": "باز کردن Issue در GitHub",
+		"copyInstructions": "جزئیات خطا را برای گزارش کپی کنید:",
+		"errorStack": "پشته خطا:",
+		"componentStack": "پشته کامپوننت:"
+	},
+	"answers": {
+		"yes": "بله",
+		"no": "خیر",
+		"cancel": "لغو",
+		"remove": "حذف",
+		"keep": "نگه‌داری"
+	},
+	"number_format": {
+		"thousand_suffix": "هزار",
+		"million_suffix": "میلیون",
+		"billion_suffix": "میلیارد"
+	},
+	"feedback": {
+		"title": "بازخورد",
+		"description": "خوشحال می‌شویم نظرات شما را بشنویم یا در رفع مشکلات کمکتان کنیم.",
+		"githubIssues": "گزارش مشکل در GitHub",
+		"githubDiscussions": "شرکت در بحث‌های GitHub",
+		"discord": "عضویت در انجمن Discord",
+		"customerSupport": "پشتیبانی مشتریان"
+	},
+	"ui": {
+		"search_placeholder": "جستجو...",
+		"no_results": "نتیجه‌ای یافت نشد"
+	},
+	"mermaid": {
+		"loading": "در حال تولید نمودار...",
+		"render_error": "امکان نمایش نمودار وجود ندارد",
+		"fixing_syntax": "در حال اصلاح نحو Mermaid...",
+		"fix_syntax_button": "اصلاح نحو با هوش مصنوعی",
+		"original_code": "کد اصلی:",
+		"errors": {
+			"unknown_syntax": "خطای نحوی ناشناخته",
+			"fix_timeout": "درخواست اصلاح به پایان رسید",
+			"fix_failed": "اصلاح ناموفق بود",
+			"fix_attempts": "اصلاح نحو پس از {{attempts}} تلاش ناموفق بود. آخرین خطا: {{error}}",
+			"no_fix_provided": "اصلاحی ارائه نشد",
+			"fix_request_failed": "درخواست اصلاح ناموفق بود"
+		},
+		"buttons": {
+			"zoom": "بزرگنمایی",
+			"zoomIn": "بزرگنمایی",
+			"zoomOut": "کوچکنمایی",
+			"copy": "کپی",
+			"save": "ذخیره تصویر",
+			"viewCode": "مشاهده کد",
+			"viewDiagram": "مشاهده نمودار",
+			"close": "بستن"
+		},
+		"modal": {
+			"codeTitle": "کد Mermaid"
+		},
+		"tabs": {
+			"diagram": "نمودار",
+			"code": "کد"
+		},
+		"feedback": {
+			"imageCopied": "تصویر در کلیپ‌بورد کپی شد",
+			"copyError": "خطا در کپی تصویر"
+		}
+	},
+	"image": {
+		"tabs": {
+			"view": "تصویر"
+		},
+		"noData": "داده تصویر موجود نیست"
+	},
+	"file": {
+		"errors": {
+			"invalidDataUri": "فرمت URI داده نامعتبر است",
+			"copyingImage": "خطا در کپی تصویر: {{error}}",
+			"openingImage": "خطا در باز کردن تصویر: {{error}}",
+			"pathNotExists": "مسیر وجود ندارد: {{path}}",
+			"couldNotOpen": "امکان باز کردن فایل وجود ندارد: {{error}}",
+			"couldNotOpenGeneric": "امکان باز کردن فایل وجود ندارد!"
+		},
+		"success": {
+			"imageDataUriCopied": "داده تصویر در کلیپ‌بورد کپی شد"
+		}
+	},
+	"confirmation": {
+		"deleteMessage": "حذف پیام",
+		"deleteWarning": "حذف این پیام تمام پیام‌های بعدی در مکالمه را حذف می‌کند. ادامه می‌دهید؟",
+		"editMessage": "ویرایش پیام",
+		"editWarning": "ویرایش این پیام تمام پیام‌های بعدی در مکالمه را حذف می‌کند. ادامه می‌دهید؟",
+		"editQuestionWithCheckpoint": "ویرایش این پیام پیام‌های بعدی را حذف می‌کند. آیا می‌خواهید تغییرات را به این نقطه ذخیره بازگردانید؟",
+		"deleteQuestionWithCheckpoint": "حذف این پیام پیام‌های بعدی را حذف می‌کند. آیا می‌خواهید تغییرات را به این نقطه ذخیره بازگردانید؟",
+		"editOnly": "خیر، فقط پیام را ویرایش کن",
+		"deleteOnly": "خیر، فقط پیام را حذف کن",
+		"restoreToCheckpoint": "بله، نقطه ذخیره را بازگردان",
+		"proceed": "ادامه",
+		"dontShowAgain": "دیگر نشان نده"
+	},
+	"time_ago": {
+		"just_now": "همین الان",
+		"seconds_ago": "{{count}} ثانیه پیش",
+		"minute_ago": "یک دقیقه پیش",
+		"minutes_ago": "{{count}} دقیقه پیش",
+		"hour_ago": "یک ساعت پیش",
+		"hours_ago": "{{count}} ساعت پیش",
+		"day_ago": "یک روز پیش",
+		"days_ago": "{{count}} روز پیش",
+		"week_ago": "یک هفته پیش",
+		"weeks_ago": "{{count}} هفته پیش",
+		"month_ago": "یک ماه پیش",
+		"months_ago": "{{count}} ماه پیش",
+		"year_ago": "یک سال پیش",
+		"years_ago": "{{count}} سال پیش"
+	},
+	"errors": {
+		"wait_checkpoint_long_time": "{{timeout}} ثانیه برای راه‌اندازی نقطه ذخیره منتظر ماندیم. اگر به این ویژگی نیاز ندارید، لطفاً آن را در <settingsLink>تنظیمات نقطه ذخیره</settingsLink> غیرفعال کنید.",
+		"init_checkpoint_fail_long_time": "راه‌اندازی نقطه ذخیره بیش از {{timeout}} ثانیه طول کشید، بنابراین نقاط ذخیره برای این وظیفه غیرفعال شدند.",
+		"attempt_completion_tool_failed": "امکان اجرای attempt_completion وجود ندارد زیرا یک فراخوانی ابزار قبلی در این نوبت ناموفق بود."
+	},
+	"tasks": {
+		"delegated": "به زیروظیفه واگذار شد",
+		"delegated_to": "به وظیفه {{childId}} واگذار شد",
+		"delegation_completed": "زیروظیفه تکمیل شد، ادامه وظیفه اصلی",
+		"awaiting_child": "در انتظار وظیفه فرزند {{childId}}"
+	}
+}

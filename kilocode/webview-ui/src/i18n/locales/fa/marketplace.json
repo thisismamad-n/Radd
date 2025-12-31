@@ -1,0 +1,154 @@
+{
+	"title": "بازارچه دستیار راد",
+	"tabs": {
+		"installed": "نصب‌شده",
+		"settings": "تنظیمات",
+		"browse": "مرور"
+	},
+	"done": "انجام شد",
+	"refresh": "بازخوانی",
+	"filters": {
+		"search": {
+			"placeholder": "جستجوی موارد بازارچه...",
+			"placeholderMcp": "جستجوی MCPها...",
+			"placeholderMode": "جستجوی حالت‌ها..."
+		},
+		"installed": {
+			"label": "فیلتر بر اساس وضعیت",
+			"all": "همه موارد",
+			"installed": "نصب‌شده",
+			"notInstalled": "نصب‌نشده"
+		},
+		"type": {
+			"label": "فیلتر بر اساس نوع:",
+			"all": "همه انواع",
+			"mode": "حالت",
+			"mcpServer": "سرور MCP"
+		},
+		"sort": {
+			"label": "مرتب‌سازی بر اساس:",
+			"name": "نام",
+			"author": "نویسنده",
+			"lastUpdated": "آخرین به‌روزرسانی"
+		},
+		"tags": {
+			"label": "فیلتر بر اساس برچسب‌ها:",
+			"clear": "پاک کردن برچسب‌ها",
+			"placeholder": "برای جستجو و انتخاب برچسب‌ها تایپ کنید...",
+			"noResults": "برچسب منطبقی یافت نشد",
+			"selected": "نمایش موارد با هر یک از برچسب‌های انتخاب‌شده",
+			"clickToFilter": "روی برچسب‌ها کلیک کنید تا موارد فیلتر شوند"
+		},
+		"none": "هیچ‌کدام"
+	},
+	"sections": {
+		"organizationMcps": "MCPهای {{organization}}",
+		"marketplace": "بازارچه"
+	},
+	"type-group": {
+		"modes": "حالت‌ها",
+		"mcps": "سرورهای MCP"
+	},
+	"items": {
+		"empty": {
+			"noItems": "موردی در بازارچه یافت نشد",
+			"withFilters": "فیلترهای خود را تنظیم کنید",
+			"noSources": "یک منبع در تب منابع اضافه کنید",
+			"adjustFilters": "فیلترها یا عبارات جستجوی خود را تنظیم کنید",
+			"clearAllFilters": "پاک کردن همه فیلترها"
+		},
+		"count": "{{count}} مورد یافت شد",
+		"components": "{{count}} کامپوننت",
+		"matched": "{{count}} منطبق",
+		"refresh": {
+			"button": "بازخوانی",
+			"refreshing": "در حال بازخوانی...",
+			"mayTakeMoment": "این ممکن است کمی طول بکشد."
+		},
+		"card": {
+			"by": "توسط {{author}}",
+			"from": "از {{source}}",
+			"install": "نصب",
+			"installProject": "نصب",
+			"installGlobal": "نصب (عمومی)",
+			"remove": "حذف",
+			"removeProject": "حذف",
+			"removeGlobal": "حذف (عمومی)",
+			"viewSource": "مشاهده",
+			"viewOnSource": "مشاهده در {{source}}",
+			"noWorkspaceTooltip": "یک فضای کاری باز کنید تا موارد بازارچه را نصب کنید",
+			"installed": "نصب‌شده",
+			"removeProjectTooltip": "حذف از پروژه فعلی",
+			"removeGlobalTooltip": "حذف از پیکربندی عمومی",
+			"actionsMenuLabel": "اقدامات بیشتر"
+		},
+		"removeFailed": "حذف مورد ناموفق بود: {{error}}",
+		"unknownError": "خطای ناشناخته رخ داد"
+	}
+,
+	"install": {
+		"title": "نصب {{name}}",
+		"titleMode": "نصب حالت {{name}}",
+		"titleMcp": "نصب MCP {{name}}",
+		"scope": "محدوده نصب",
+		"project": "پروژه (فضای کاری فعلی)",
+		"global": "عمومی (همه فضاهای کاری)",
+		"method": "روش نصب",
+		"prerequisites": "پیش‌نیازها",
+		"configuration": "پیکربندی",
+		"configurationDescription": "پارامترهای مورد نیاز برای این سرور MCP را پیکربندی کنید",
+		"button": "نصب",
+		"successTitle": "{{name}} نصب شد",
+		"successDescription": "نصب با موفقیت تکمیل شد",
+		"installed": "با موفقیت نصب شد!",
+		"whatNextMcp": "اکنون می‌توانید این سرور MCP را پیکربندی و استفاده کنید. روی آیکون MCP در نوار کناری کلیک کنید تا تب‌ها را تغییر دهید.",
+		"whatNextMode": "اکنون می‌توانید از این حالت استفاده کنید. روی آیکون حالت‌ها در نوار کناری کلیک کنید تا تب‌ها را تغییر دهید.",
+		"done": "انجام شد",
+		"goToMcp": "رفتن به تب MCP",
+		"goToModes": "رفتن به تنظیمات حالت‌ها",
+		"moreInfoMcp": "مشاهده مستندات MCP {{name}}",
+		"validationRequired": "لطفاً یک مقدار برای {{paramName}} ارائه دهید"
+	},
+	"sources": {
+		"title": "پیکربندی منابع بازارچه",
+		"description": "مخازن Git که شامل موارد بازارچه هستند اضافه کنید. این مخازن هنگام مرور بازارچه واکشی می‌شوند.",
+		"add": {
+			"title": "افزودن منبع جدید",
+			"urlPlaceholder": "URL مخزن Git (مثلاً https://github.com/username/repo)",
+			"urlFormats": "فرمت‌های پشتیبانی‌شده: HTTPS، SSH یا پروتکل Git",
+			"namePlaceholder": "نام نمایشی (حداکثر ۲۰ کاراکتر)",
+			"button": "افزودن منبع"
+		},
+		"current": {
+			"title": "منابع فعلی",
+			"empty": "منبعی پیکربندی نشده. یک منبع اضافه کنید تا شروع کنید.",
+			"refresh": "بازخوانی این منبع",
+			"remove": "حذف منبع"
+		},
+		"errors": {
+			"emptyUrl": "URL نمی‌تواند خالی باشد",
+			"invalidUrl": "فرمت URL نامعتبر",
+			"invalidGitUrl": "URL باید یک URL مخزن Git معتبر باشد",
+			"duplicateUrl": "این URL از قبل در لیست است",
+			"nameTooLong": "نام باید ۲۰ کاراکتر یا کمتر باشد",
+			"duplicateName": "این نام از قبل استفاده شده",
+			"maxSources": "حداکثر {{max}} منبع مجاز است"
+		}
+	},
+	"removeConfirm": {
+		"mode": {
+			"title": "حذف حالت",
+			"message": "آیا مطمئن هستید که می‌خواهید حالت \"{{modeName}}\" را حذف کنید؟",
+			"rulesWarning": "این همچنین فایل‌های قوانین مرتبط با این حالت را حذف می‌کند."
+		},
+		"mcp": {
+			"title": "حذف سرور MCP",
+			"message": "آیا مطمئن هستید که می‌خواهید سرور MCP \"{{mcpName}}\" را حذف کنید؟"
+		},
+		"cancel": "لغو",
+		"confirm": "حذف"
+	},
+	"footer": {
+		"issueText": "مشکلی با یک مورد بازارچه پیدا کردید یا پیشنهادی برای موارد جدید دارید؟ <0>یک issue در گیت‌هاب باز کنید</0> تا به ما اطلاع دهید!"
+	}
+}

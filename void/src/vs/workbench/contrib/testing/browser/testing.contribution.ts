@@ -118,6 +118,7 @@ viewsRegistry.registerViews([{
 	weight: 80,
 	order: -999,
 	containerIcon: testingViewIcon,
+	hideByDefault: true,
 	when: ContextKeyExpr.greater(TestingContextKeys.providerCount.key, 0),
 }, {
 	id: Testing.CoverageViewId,
@@ -128,6 +129,7 @@ viewsRegistry.registerViews([{
 	weight: 80,
 	order: -998,
 	containerIcon: testingViewIcon,
+	hideByDefault: true,
 	when: TestingContextKeys.isTestCoverageOpen,
 }], viewContainer);
 

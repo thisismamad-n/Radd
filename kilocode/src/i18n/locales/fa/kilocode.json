@@ -1,0 +1,203 @@
+{
+	"info": {
+		"settings_imported": "تنظیمات با موفقیت وارد شد."
+	},
+	"userFeedback": {
+		"message_update_failed": "به‌روزرسانی پیام ناموفق بود",
+		"no_checkpoint_found": "نقطه ذخیره‌ای قبل از این پیام یافت نشد",
+		"message_updated": "پیام با موفقیت به‌روزرسانی شد"
+	},
+	"lowCreditWarning": {
+		"title": "هشدار اعتبار کم!",
+		"message": "بررسی کنید آیا می‌توانید با اعتبار رایگان شارژ کنید یا اعتبار بیشتری خریداری کنید!"
+	},
+	"task": {
+		"noAssistantMessages": "پاسخ مدل به طور غیرمنتظره پایان یافت (بدون پیام دستیار). این ممکن است نشانه محدودیت نرخ باشد.",
+		"notLoggedInError": "امکان تکمیل درخواست وجود ندارد، مطمئن شوید که متصل و با ارائه‌دهنده انتخاب شده وارد شده‌اید.\n\n{{error}}",
+		"maxCompletionTokens": "به حداکثر تعداد توکن‌های تکمیل رسیده است.",
+		"disableApplyDiff": "اگر این خطا همچنان تکرار می‌شود، لطفاً ویرایش از طریق تفاوت‌ها را در تنظیمات پیشرفته غیرفعال کنید.",
+		"disableEditFile": "اگر این خطا همچنان تکرار می‌شود، لطفاً ویژگی آزمایشی اعمال سریع را غیرفعال کنید."
+	},
+	"checkpoints": {
+		"nestedGitRepos": "نقاط ذخیره در دسترس نیست، زیرا یک مخزن Git تودرتو در {{path}} شناسایی شد. لطفاً مخازن Git تودرتو را حذف یا جابجا کنید تا از ویژگی نقاط ذخیره استفاده کنید یا نقاط ذخیره را در تنظیمات غیرفعال کنید.",
+		"protectedPaths": "نقاط ذخیره در {{workspaceDir}} در دسترس نیست. لطفاً یک زیرپوشه را به عنوان فضای کار باز کنید تا از ویژگی نقاط ذخیره استفاده کنید یا نقاط ذخیره را در تنظیمات غیرفعال کنید.",
+		"dismissWarning": "نادیده بگیر"
+	},
+	"rules": {
+		"actions": {
+			"delete": "حذف",
+			"confirmDelete": "آیا مطمئن هستید که می‌خواهید {{filename}} را حذف کنید؟",
+			"deleted": "{{filename}} حذف شد"
+		},
+		"errors": {
+			"noWorkspaceFound": "پوشه فضای کار یافت نشد",
+			"fileAlreadyExists": "فایل {{filename}} از قبل وجود دارد",
+			"failedToCreateRuleFile": "ایجاد فایل قانون ناموفق بود.",
+			"failedToDeleteRuleFile": "حذف فایل قانون ناموفق بود."
+		},
+		"templates": {
+			"workflow": {
+				"description": "توضیحات گردش کار اینجا...",
+				"stepsHeader": "## مراحل",
+				"step1": "مرحله ۱",
+				"step2": "مرحله ۲"
+			},
+			"rule": {
+				"description": "توضیحات قانون اینجا...",
+				"guidelinesHeader": "## راهنماها",
+				"guideline1": "راهنما ۱",
+				"guideline2": "راهنما ۲"
+			}
+		}
+	}
+,
+	"commitMessage": {
+		"activated": "تولیدکننده پیام کامیت دستیار راد فعال شد",
+		"gitNotFound": "⚠️ مخزن Git یافت نشد یا git در دسترس نیست",
+		"gitInitError": "⚠️ خطای راه‌اندازی Git: {{error}}",
+		"generating": "راد: در حال تولید پیام کامیت...",
+		"noChanges": "راد: تغییری برای تحلیل یافت نشد",
+		"generated": "راد: پیام کامیت تولید شد!",
+		"generationFailed": "راد: تولید پیام کامیت ناموفق بود: {{errorMessage}}",
+		"generatingFromUnstaged": "راد: تولید پیام با استفاده از تغییرات غیرمرحله‌بندی شده",
+		"activationFailed": "راد: فعال‌سازی تولیدکننده پیام ناموفق بود: {{error}}",
+		"providerRegistered": "راد: ارائه‌دهنده پیام کامیت ثبت شد",
+		"errors": {
+			"connectionFailed": "اتصال به افزونه دستیار راد ناموفق بود",
+			"timeout": "درخواست پس از ۳۰ ثانیه به پایان رسید",
+			"invalidResponse": "فرمت پاسخ نامعتبر از افزونه دریافت شد",
+			"missingMessage": "پیام کامیتی از افزونه دریافت نشد",
+			"noChanges": "تغییری برای کامیت یافت نشد",
+			"noProject": "پروژه‌ای در دسترس نیست",
+			"noWorkspacePath": "تعیین مسیر فضای کار برای مخزن Git امکان‌پذیر نبود",
+			"workspaceNotFound": "تعیین مسیر فضای کار برای مخزن Git امکان‌پذیر نبود",
+			"processingError": "خطا در پردازش تولید پیام کامیت: {{error}}"
+		},
+		"error": {
+			"title": "خطا",
+			"workspacePathNotFound": "تعیین مسیر فضای کار برای مخزن Git امکان‌پذیر نبود",
+			"generationFailed": "تولید پیام کامیت ناموفق بود: {{error}}",
+			"processingFailed": "خطا در پردازش تولید پیام کامیت: {{error}}",
+			"unknown": "خطای ناشناخته"
+		},
+		"dialogs": {
+			"info": "پیام کامیت هوشمند",
+			"error": "خطا",
+			"success": "موفقیت",
+			"title": "پیام کامیت هوشمند"
+		},
+		"progress": {
+			"title": "تولید پیام کامیت",
+			"analyzing": "در حال تحلیل تغییرات...",
+			"connecting": "در حال اتصال به دستیار راد...",
+			"generating": "در حال تولید پیام کامیت..."
+		},
+		"ui": {
+			"generateButton": "تولید پیام کامیت",
+			"generateButtonTooltip": "پیام کامیت را با استفاده از هوش مصنوعی برای تحلیل تغییرات کد شما تولید می‌کند"
+		}
+	},
+	"ghost": {
+		"statusBar": {
+			"enabled": "$(radd-logo) تکمیل خودکار",
+			"snoozed": "متوقف موقت",
+			"warning": "$(warning) تکمیل خودکار",
+			"tooltip": {
+				"basic": "تکمیل خودکار دستیار راد",
+				"disabled": "تکمیل خودکار دستیار راد (غیرفعال)",
+				"tokenError": "برای استفاده از تکمیل خودکار باید یک توکن معتبر تنظیم شود",
+				"sessionTotal": "هزینه کل جلسه:",
+				"provider": "ارائه‌دهنده:",
+				"model": "مدل:",
+				"profile": "پروفایل: ",
+				"defaultProfile": "پیش‌فرض",
+				"completionSummary": "{{count}} تکمیل بین {{startTime}} و {{endTime}} انجام شد، با هزینه کل {{cost}}.",
+				"providerInfo": "تکمیل‌های خودکار توسط {{model}} از طریق {{provider}} ارائه می‌شود."
+			},
+			"cost": {
+				"zero": "۰ تومان",
+				"lessThanCent": "<۱۰۰ تومان"
+			}
+		},
+		"toggleMessage": "تکمیل خودکار دستیار راد {{status}}",
+		"progress": {
+			"title": "دستیار راد",
+			"analyzing": "در حال تحلیل کد شما...",
+			"generating": "در حال تولید ویرایش‌های پیشنهادی...",
+			"processing": "در حال پردازش ویرایش‌های پیشنهادی...",
+			"showing": "نمایش ویرایش‌های پیشنهادی..."
+		},
+		"input": {
+			"title": "دستیار راد: وظیفه سریع",
+			"placeholder": "مثلاً 'این تابع را برای کارایی بیشتر بازنویسی کن'"
+		},
+		"commands": {
+			"generateSuggestions": "دستیار راد: تولید ویرایش‌های پیشنهادی",
+			"displaySuggestions": "نمایش ویرایش‌های پیشنهادی",
+			"cancelSuggestions": "لغو ویرایش‌های پیشنهادی",
+			"applyCurrentSuggestion": "اعمال ویرایش پیشنهادی فعلی",
+			"applyAllSuggestions": "اعمال همه ویرایش‌های پیشنهادی",
+			"category": "دستیار راد"
+		},
+		"codeAction": {
+			"title": "دستیار راد: ویرایش‌های پیشنهادی"
+		},
+		"chatParticipant": {
+			"fullName": "عامل دستیار راد",
+			"name": "عامل",
+			"description": "می‌توانم در وظایف سریع و ویرایش‌های پیشنهادی کمکتان کنم."
+		},
+		"incompatibilityExtensionPopup": {
+			"message": "تکمیل خودکار دستیار راد به دلیل تداخل با GitHub Copilot مسدود شده است. برای رفع این مشکل، باید پیشنهادات درون‌خطی Copilot را غیرفعال کنید.",
+			"disableCopilot": "غیرفعال کردن Copilot",
+			"disableInlineAssist": "غیرفعال کردن تکمیل خودکار"
+		}
+	}
+,
+	"seeNewChanges": {
+		"title": "نمایش تغییرات جدید",
+		"checkpointsUnavailable": "نمایش تغییرات جدید امکان‌پذیر نیست، نقاط ذخیره در دسترس نیست.",
+		"noChanges": "نمایش تغییرات جدید امکان‌پذیر نیست، تغییری یافت نشد.",
+		"error": "نمایش تغییرات جدید امکان‌پذیر نیست، خطایی رخ داد."
+	},
+	"agentManager": {
+		"errors": {
+			"cliOutdated": "نسخه CLI شما قدیمی است و از مدیر عامل پشتیبانی نمی‌کند. لطفاً به آخرین نسخه به‌روزرسانی کنید.",
+			"cliNotFound": "CLI یافت نشد. لطفاً برای استفاده از مدیر عامل آن را نصب کنید.",
+			"cliMisconfigured": "CLI پیکربندی نشده است. لطفاً 'kilocode auth' را برای ورود یا 'kilocode config' را برای پیکربندی اجرا کنید.",
+			"sessionFailed": "شروع جلسه عامل ناموفق بود",
+			"sessionFailedWithMessage": "شروع جلسه عامل ناموفق بود: {{message}}"
+		},
+		"actions": {
+			"updateInstructions": "دستورالعمل‌های به‌روزرسانی",
+			"installInstructions": "دستورالعمل‌های نصب",
+			"getHelp": "دریافت کمک",
+			"runInTerminal": "اجرا در ترمینال",
+			"updateGlobal": "به‌روزرسانی سراسری",
+			"updateLocal": "به‌روزرسانی محلی",
+			"installGlobal": "نصب سراسری",
+			"installLocal": "نصب محلی",
+			"loginCli": "اجرای kilocode auth",
+			"configureCli": "اجرای kilocode config"
+		},
+		"terminal": {
+			"installMessage": "در حال اجرای npm install برای نصب CLI. پس از اتمام، می‌توانید این ترمینال را ببندید و دوباره مدیر عامل را شروع کنید.",
+			"authReminder": "اگر این اولین نصب شماست، قبل از شروع مدیر عامل `kilocode auth` را برای ورود اجرا کنید."
+		}
+	},
+	"terminalCommandGenerator": {
+		"tipMessage": "راد: {{shortcut}} را برای تولید دستورات ترمینال فشار دهید",
+		"inputPrompt": "راد: دستوری که می‌خواهید تولید شود را توصیف کنید",
+		"inputPlaceholder": "مثلاً فرآیند در حال اجرا روی پورت ۳۰۰۱ را متوقف کن، فایل‌های بزرگ را پیدا کن و غیره",
+		"noActiveTerminal": "راد: ترمینال فعالی یافت نشد. لطفاً ابتدا یک ترمینال باز کنید.",
+		"generatingProgress": "راد: در حال تولید دستور ترمینال...",
+		"commandGenerated": "راد: دستور تولید شده: {{command}}",
+		"generationFailed": "راد: تولید دستور ناموفق بود: {{error}}",
+		"warningDialog": {
+			"title": "هشدار ایمنی ترمینال",
+			"message": "همه دستورات تولید شده را قبل از اجرا دوباره بررسی کنید. اقدامات ترمینال همیشه قابل بازگشت نیستند - اجرای دستورات تأیید نشده می‌تواند منجر به از دست رفتن غیرقابل بازگشت داده‌ها یا آسیب به سیستم شود. دستور را کاملاً بررسی و درک کنید قبل از ادامه!",
+			"okButton": "متوجه شدم",
+			"cancelButton": "لغو"
+		}
+	}
+}

@@ -42,5 +42,7 @@
 		"https://voideditor.dev",
 		"https://github.com/voideditor/void",
 		"https://ollama.com"
-	]
+	],
+	"defaultLocale": "fa",
+	"supportedLocales": ["en", "fa"]
 }

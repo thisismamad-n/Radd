@@ -1,0 +1,77 @@
+{
+	"unknownError": "خطای ناشناخته",
+	"authenticationFailed": "ایجاد embeddings ناموفق بود: احراز هویت ناموفق. لطفاً کلید API خود را بررسی کنید.",
+	"failedWithStatus": "ایجاد embeddings پس از {{attempts}} تلاش ناموفق بود: HTTP {{statusCode}} - {{errorMessage}}",
+	"failedWithError": "ایجاد embeddings پس از {{attempts}} تلاش ناموفق بود: {{errorMessage}}",
+	"failedMaxAttempts": "ایجاد embeddings پس از {{attempts}} تلاش ناموفق بود",
+	"textExceedsTokenLimit": "متن در شاخص {{index}} از حداکثر محدودیت توکن تجاوز می‌کند ({{itemTokens}} > {{maxTokens}}). نادیده گرفته می‌شود.",
+	"rateLimitRetry": "به محدودیت نرخ رسیده، تلاش مجدد در {{delayMs}} میلی‌ثانیه (تلاش {{attempt}}/{{maxRetries}})",
+	"ollama": {
+		"couldNotReadErrorBody": "خواندن بدنه خطا امکان‌پذیر نبود",
+		"requestFailed": "درخواست API Ollama با وضعیت {{status}} {{statusText}} ناموفق بود: {{errorBody}}",
+		"invalidResponseStructure": "ساختار پاسخ نامعتبر از API Ollama: آرایه \"embeddings\" یافت نشد یا آرایه نیست.",
+		"embeddingFailed": "embedding Ollama ناموفق بود: {{message}}",
+		"serviceNotRunning": "سرویس Ollama در {{baseUrl}} در حال اجرا نیست",
+		"serviceUnavailable": "سرویس Ollama در دسترس نیست (وضعیت: {{status}})",
+		"modelNotFound": "مدل Ollama یافت نشد: {{modelId}}",
+		"modelNotEmbeddingCapable": "مدل Ollama قابلیت embedding ندارد: {{modelId}}",
+		"hostNotFound": "میزبان Ollama یافت نشد: {{baseUrl}}"
+	},
+	"bedrock": {
+		"invalidResponseFormat": "فرمت پاسخ نامعتبر از Amazon Bedrock",
+		"invalidCredentials": "اعتبارنامه‌های AWS نامعتبر. لطفاً پیکربندی AWS خود را بررسی کنید.",
+		"accessDenied": "دسترسی به سرویس Amazon Bedrock رد شد. لطفاً مجوزهای IAM خود را بررسی کنید.",
+		"modelNotFound": "مدل {{model}} در Amazon Bedrock یافت نشد"
+	},
+	"scanner": {
+		"unknownErrorProcessingFile": "خطای ناشناخته در پردازش فایل {{filePath}}",
+		"unknownErrorDeletingPoints": "خطای ناشناخته در حذف نقاط برای {{filePath}}",
+		"failedToProcessBatchWithError": "پردازش دسته پس از {{maxRetries}} تلاش ناموفق بود: {{errorMessage}}"
+	},
+	"vectorStore": {
+		"qdrantConnectionFailed": "اتصال به پایگاه داده برداری Qdrant ناموفق بود. لطفاً مطمئن شوید Qdrant در {{qdrantUrl}} در حال اجرا و قابل دسترسی است. خطا: {{errorMessage}}",
+		"vectorDimensionMismatch": "به‌روزرسانی شاخص برداری برای مدل جدید ناموفق بود. لطفاً شاخص را پاک کنید و دوباره شروع کنید. جزئیات: {{errorMessage}}",
+		"lancedbStoreInitFailed": "راه‌اندازی فروشگاه برداری lancedb ناموفق بود: {{errorMessage}}",
+		"lancedbLoadFailed": "بارگذاری ماژول LanceDB ناموفق بود: {{errorMessage}}"
+	},
+	"validation": {
+		"authenticationFailed": "احراز هویت ناموفق بود. لطفاً کلید API خود را در تنظیمات بررسی کنید.",
+		"connectionFailed": "اتصال به سرویس embedder ناموفق بود. لطفاً تنظیمات اتصال را بررسی کنید و مطمئن شوید سرویس در حال اجراست.",
+		"modelNotAvailable": "مدل مشخص شده در دسترس نیست. لطفاً پیکربندی مدل خود را بررسی کنید.",
+		"configurationError": "پیکربندی embedder نامعتبر. لطفاً تنظیمات خود را بررسی کنید.",
+		"serviceUnavailable": "سرویس embedder در دسترس نیست. لطفاً مطمئن شوید در حال اجرا و قابل دسترسی است.",
+		"invalidEndpoint": "نقطه پایانی API نامعتبر. لطفاً پیکربندی URL خود را بررسی کنید.",
+		"invalidEmbedderConfig": "پیکربندی embedder نامعتبر. لطفاً تنظیمات خود را بررسی کنید.",
+		"invalidApiKey": "کلید API نامعتبر. لطفاً پیکربندی کلید API خود را بررسی کنید.",
+		"invalidBaseUrl": "URL پایه نامعتبر. لطفاً پیکربندی URL خود را بررسی کنید.",
+		"invalidModel": "مدل نامعتبر. لطفاً پیکربندی مدل خود را بررسی کنید.",
+		"invalidResponse": "پاسخ نامعتبر از سرویس embedder. لطفاً پیکربندی خود را بررسی کنید.",
+		"apiKeyRequired": "کلید API برای این embedder لازم است",
+		"baseUrlRequired": "URL پایه برای این embedder لازم است"
+	},
+	"serviceFactory": {
+		"openAiConfigMissing": "پیکربندی OpenAI برای ایجاد embedder موجود نیست",
+		"ollamaConfigMissing": "پیکربندی Ollama برای ایجاد embedder موجود نیست",
+		"openAiCompatibleConfigMissing": "پیکربندی سازگار با OpenAI برای ایجاد embedder موجود نیست",
+		"geminiConfigMissing": "پیکربندی Gemini برای ایجاد embedder موجود نیست",
+		"mistralConfigMissing": "پیکربندی Mistral برای ایجاد embedder موجود نیست",
+		"openRouterConfigMissing": "پیکربندی OpenRouter برای ایجاد embedder موجود نیست",
+		"vercelAiGatewayConfigMissing": "پیکربندی Vercel AI Gateway برای ایجاد embedder موجود نیست",
+		"bedrockConfigMissing": "پیکربندی Amazon Bedrock برای ایجاد embedder موجود نیست",
+		"invalidEmbedderType": "نوع embedder پیکربندی شده نامعتبر: {{embedderProvider}}",
+		"vectorDimensionNotDeterminedOpenAiCompatible": "تعیین بعد برداری برای مدل '{{modelId}}' با ارائه‌دهنده '{{provider}}' امکان‌پذیر نبود. لطفاً مطمئن شوید 'بعد Embedding' در تنظیمات ارائه‌دهنده سازگار با OpenAI به درستی تنظیم شده است.",
+		"vectorDimensionNotDetermined": "تعیین بعد برداری برای مدل '{{modelId}}' با ارائه‌دهنده '{{provider}}' امکان‌پذیر نبود. پروفایل‌های مدل یا پیکربندی را بررسی کنید.",
+		"qdrantUrlMissing": "URL Qdrant برای ایجاد فروشگاه برداری موجود نیست",
+		"codeIndexingNotConfigured": "ایجاد سرویس‌ها امکان‌پذیر نیست: فهرست‌بندی کد به درستی پیکربندی نشده است"
+	},
+	"orchestrator": {
+		"indexingFailedNoBlocks": "فهرست‌بندی ناموفق بود: هیچ بلوک کدی با موفقیت فهرست‌بندی نشد. این معمولاً نشان‌دهنده مشکل پیکربندی embedder است.",
+		"indexingFailedCritical": "فهرست‌بندی ناموفق بود: هیچ بلوک کدی با موفقیت فهرست‌بندی نشد علی‌رغم یافتن فایل‌ها برای پردازش. این نشان‌دهنده شکست بحرانی embedder است.",
+		"fileWatcherStarted": "ناظر فایل شروع شد.",
+		"fileWatcherStopped": "ناظر فایل متوقف شد.",
+		"failedDuringInitialScan": "در طول اسکن اولیه ناموفق بود: {{errorMessage}}",
+		"unknownError": "خطای ناشناخته",
+		"indexingRequiresWorkspace": "فهرست‌بندی نیاز به یک پوشه فضای کار باز دارد",
+		"indexingCancelled": "فهرست‌بندی لغو شد"
+	}
+}

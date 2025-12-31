@@ -1,0 +1,345 @@
+{
+	"greeting": "دستیار راد چه کاری می‌تواند برای شما انجام دهد؟",
+	"task": {
+		"title": "وظیفه",
+		"expand": "باز کردن وظیفه",
+		"collapse": "جمع کردن وظیفه",
+		"seeMore": "بیشتر ببینید",
+		"seeLess": "کمتر ببینید",
+		"tokens": "توکن‌ها",
+		"cache": "کش",
+		"apiCost": "هزینه API",
+		"size": "اندازه",
+		"condenseContext": "فشرده‌سازی هوشمند زمینه",
+		"contextWindow": "طول زمینه",
+		"closeAndStart": "بستن وظیفه و شروع وظیفه جدید",
+		"export": "صادر کردن تاریخچه وظیفه",
+		"share": "اشتراک‌گذاری وظیفه",
+		"delete": "حذف وظیفه (Shift + کلیک برای رد تأیید)",
+		"shareWithOrganization": "اشتراک‌گذاری با سازمان",
+		"shareWithOrganizationDescription": "فقط اعضای سازمان شما می‌توانند دسترسی داشته باشند",
+		"sharePublicly": "اشتراک‌گذاری عمومی",
+		"sharePubliclyDescription": "هر کسی با لینک می‌تواند دسترسی داشته باشد",
+		"connectToCloud": "اتصال به ابر",
+		"connectToCloudDescription": "برای اشتراک‌گذاری وظایف وارد شوید",
+		"sharingDisabledByOrganization": "اشتراک‌گذاری توسط سازمان غیرفعال شده است",
+		"shareSuccessOrganization": "لینک سازمان در کلیپ‌بورد کپی شد",
+		"shareSuccessPublic": "لینک عمومی در کلیپ‌بورد کپی شد",
+		"openInCloud": "باز کردن وظیفه در ابر",
+		"openInCloudIntro": "از هر جایی نظارت یا تعامل کنید. اسکن، کلیک یا کپی کنید.",
+		"openApiHistory": "باز کردن تاریخچه API",
+		"openUiHistory": "باز کردن تاریخچه UI"
+	},
+	"history": {
+		"title": "تاریخچه"
+	},
+	"unpin": "برداشتن پین",
+	"pin": "پین کردن",
+	"retry": {
+		"title": "تلاش مجدد",
+		"tooltip": "عملیات را دوباره امتحان کنید"
+	},
+	"startNewTask": {
+		"title": "شروع وظیفه جدید",
+		"tooltip": "یک وظیفه جدید شروع کنید"
+	},
+	"reportBug": {
+		"title": "گزارش اشکال"
+	},
+	"proceedAnyways": {
+		"title": "ادامه به هر حال",
+		"tooltip": "ادامه در حین اجرای دستور"
+	},
+	"save": {
+		"title": "ذخیره",
+		"tooltip": "ذخیره تغییرات پیام"
+	},
+	"tokenProgress": {
+		"availableSpace": "فضای موجود: {{amount}} توکن",
+		"tokensUsed": "توکن‌های استفاده شده: {{used}} از {{total}}",
+		"reservedForResponse": "رزرو شده برای پاسخ مدل: {{amount}} توکن"
+	},
+	"reject": {
+		"title": "رد کردن",
+		"tooltip": "این عمل را رد کنید"
+	},
+	"completeSubtaskAndReturn": "تکمیل زیروظیفه و بازگشت",
+	"approve": {
+		"title": "تأیید",
+		"tooltip": "این عمل را تأیید کنید"
+	},
+	"read-batch": {
+		"approve": {
+			"title": "تأیید همه"
+		},
+		"deny": {
+			"title": "رد همه"
+		}
+	},
+	"runCommand": {
+		"title": "اجرا",
+		"tooltip": "این دستور را اجرا کنید"
+	},
+	"proceedWhileRunning": {
+		"title": "ادامه در حین اجرا",
+		"tooltip": "علی‌رغم هشدارها ادامه دهید"
+	},
+	"killCommand": {
+		"title": "متوقف کردن دستور",
+		"tooltip": "دستور فعلی را متوقف کنید"
+	},
+	"resumeTask": {
+		"title": "ادامه وظیفه",
+		"tooltip": "وظیفه فعلی را ادامه دهید"
+	},
+	"terminate": {
+		"title": "پایان",
+		"tooltip": "وظیفه فعلی را پایان دهید"
+	},
+	"cancel": {
+		"title": "لغو",
+		"tooltip": "عملیات فعلی را لغو کنید"
+	},
+	"editMessage": {
+		"placeholder": "پیام خود را ویرایش کنید..."
+	},
+	"scrollToBottom": "رفتن به انتهای چت",
+	"about": "تولید، بازنویسی و اشکال‌زدایی کد با کمک هوش مصنوعی. برای اطلاعات بیشتر <DocsLink>مستندات</DocsLink> ما را ببینید.",
+	"docs": "برای شروع <DocsLink>مستندات</DocsLink> ما را ببینید",
+	"onboarding": "چه کاری می‌خواهید انجام دهید؟",
+	"selectMode": "انتخاب حالت برای تعامل",
+	"selectApiConfig": "انتخاب پیکربندی API",
+	"selectModelConfig": "انتخاب مدل",
+	"enhancePrompt": "بهبود پیام با زمینه اضافی",
+	"modeSelector": {
+		"title": "حالت‌ها",
+		"marketplace": "فروشگاه حالت‌ها",
+		"settings": "تنظیمات حالت",
+		"description": "شخصیت‌های تخصصی که رفتار دستیار راد را تنظیم می‌کنند.",
+		"searchPlaceholder": "جستجوی حالت‌ها...",
+		"noResults": "نتیجه‌ای یافت نشد",
+		"organizationModes": "حالت‌های سازمان"
+	},
+	"enhancePromptDescription": "دکمه 'بهبود پیام' با ارائه زمینه اضافی، توضیح یا بازنویسی به بهبود پیام شما کمک می‌کند.",
+	"addImages": "افزودن تصاویر به پیام",
+	"sendMessage": "ارسال پیام",
+	"pressToSend": "{{keyCombination}} را برای ارسال فشار دهید",
+	"stopTts": "توقف تبدیل متن به گفتار",
+	"typeMessage": "پیامی بنویسید...",
+	"typeTask": "وظیفه خود را اینجا بنویسید...",
+	"addContext": "@ برای افزودن زمینه، / برای دستورات",
+	"dragFiles": "shift را نگه دارید تا فایل‌ها را بکشید",
+	"dragFilesImages": "shift را نگه دارید تا فایل‌ها/تصاویر را بکشید",
+	"errorReadingFile": "خطا در خواندن فایل",
+	"noValidImages": "هیچ تصویر معتبری پردازش نشد",
+	"separator": "جداکننده",
+	"edit": "ویرایش...",
+	"forNextMode": "برای حالت بعدی",
+	"forPreviousMode": "برای حالت قبلی",
+	"apiRequest": {
+		"title": "درخواست API",
+		"failed": "درخواست API ناموفق بود",
+		"streaming": "درخواست API...",
+		"cancelled": "درخواست API لغو شد",
+		"streamingFailed": "جریان API ناموفق بود",
+		"errorTitle": "خطای API {{code}}",
+		"errorMessage": {
+			"docs": "مستندات",
+			"400": "ارائه‌دهنده نتوانست درخواست را پردازش کند. وظیفه را متوقف کنید و رویکرد دیگری امتحان کنید.",
+			"401": "احراز هویت با ارائه‌دهنده ناموفق بود. لطفاً پیکربندی کلید API را بررسی کنید.",
+			"402": "به نظر می‌رسد اعتبار حساب شما تمام شده است. به ارائه‌دهنده بروید و شارژ کنید.",
+			"403": "غیرمجاز. کلید API شما معتبر است، اما ارائه‌دهنده این درخواست را رد کرد.",
+			"429": "درخواست‌های زیاد. توسط ارائه‌دهنده محدود شده‌اید. لطفاً قبل از درخواست بعدی صبر کنید.",
+			"500": "خطای سرور ارائه‌دهنده. مشکلی در سمت ارائه‌دهنده وجود دارد.",
+			"connection": "خطای اتصال. مطمئن شوید اتصال اینترنت فعال دارید.",
+			"unknown": "خطای API ناشناخته. لطفاً با پشتیبانی تماس بگیرید."
+		}
+	},
+	"checkpoint": {
+		"regular": "نقطه ذخیره",
+		"initializingWarning": "هنوز در حال راه‌اندازی نقطه ذخیره... اگر خیلی طول کشید، می‌توانید نقاط ذخیره را در <settingsLink>تنظیمات</settingsLink> غیرفعال کنید.",
+		"menu": {
+			"viewDiff": "مشاهده تفاوت‌ها",
+			"viewDiffFromInit": "مشاهده همه تغییرات",
+			"viewDiffWithCurrent": "مشاهده تغییرات از این نقطه ذخیره",
+			"restore": "بازگردانی نقطه ذخیره",
+			"restoreFiles": "بازگردانی فایل‌ها",
+			"restoreFilesDescription": "فایل‌های پروژه را به عکس فوری گرفته شده در این نقطه بازمی‌گرداند.",
+			"restoreFilesAndTask": "بازگردانی فایل‌ها و وظیفه",
+			"confirm": "تأیید",
+			"cancel": "لغو",
+			"cannotUndo": "این عمل قابل بازگشت نیست.",
+			"restoreFilesAndTaskDescription": "فایل‌های پروژه را بازمی‌گرداند و همه پیام‌های بعد از این نقطه را حذف می‌کند.",
+			"more": "گزینه‌های بیشتر"
+		},
+		"current": "فعلی"
+	},
+	"contextManagement": {
+		"tokens": "توکن",
+		"condensation": {
+			"title": "زمینه فشرده شد",
+			"inProgress": "در حال فشرده‌سازی زمینه...",
+			"errorHeader": "فشرده‌سازی زمینه ناموفق بود"
+		},
+		"truncation": {
+			"title": "زمینه کوتاه شد",
+			"inProgress": "در حال کوتاه کردن زمینه...",
+			"messagesRemoved": "{{count}} پیام حذف شد",
+			"messagesRemoved_other": "{{count}} پیام حذف شد",
+			"description": "پیام‌های قدیمی‌تر برای ماندن در محدوده پنجره زمینه حذف شدند."
+		}
+	},
+	"fileOperations": {
+		"wantsToRead": "دستیار راد می‌خواهد این فایل را بخواند",
+		"wantsToReadMultiple": "دستیار راد می‌خواهد چندین فایل را بخواند",
+		"wantsToReadAndXMore": "دستیار راد می‌خواهد این فایل و {{count}} فایل دیگر را بخواند",
+		"wantsToReadOutsideWorkspace": "دستیار راد می‌خواهد این فایل خارج از فضای کار را بخواند",
+		"didRead": "دستیار راد این فایل را خواند",
+		"wantsToEdit": "دستیار راد می‌خواهد این فایل را ویرایش کند",
+		"wantsToEditOutsideWorkspace": "دستیار راد می‌خواهد این فایل خارج از فضای کار را ویرایش کند",
+		"wantsToEditProtected": "دستیار راد می‌خواهد یک فایل پیکربندی محافظت شده را ویرایش کند",
+		"wantsToApplyBatchChanges": "دستیار راد می‌خواهد تغییرات را روی چندین فایل اعمال کند",
+		"wantsToCreate": "دستیار راد می‌خواهد یک فایل جدید ایجاد کند",
+		"wantsToDelete": "دستیار راد می‌خواهد این فایل را حذف کند",
+		"wantsToDeleteDirectory": "دستیار راد می‌خواهد این پوشه را حذف کند"
+	},
+	"directoryOperations": {
+		"wantsToViewTopLevel": "دستیار راد می‌خواهد فایل‌های سطح بالای این پوشه را ببیند",
+		"didViewTopLevel": "دستیار راد فایل‌های سطح بالای این پوشه را دید",
+		"wantsToViewRecursive": "دستیار راد می‌خواهد همه فایل‌های این پوشه را به صورت بازگشتی ببیند",
+		"didViewRecursive": "دستیار راد همه فایل‌های این پوشه را به صورت بازگشتی دید",
+		"wantsToSearch": "دستیار راد می‌خواهد این پوشه را برای <code>{{regex}}</code> جستجو کند",
+		"didSearch": "دستیار راد این پوشه را برای <code>{{regex}}</code> جستجو کرد"
+	},
+	"codebaseSearch": {
+		"wantsToSearch": "دستیار راد می‌خواهد پایگاه کد را برای <code>{{query}}</code> جستجو کند",
+		"wantsToSearchWithPath": "دستیار راد می‌خواهد پایگاه کد را برای <code>{{query}}</code> در <code>{{path}}</code> جستجو کند",
+		"didSearch_one": "۱ نتیجه یافت شد",
+		"didSearch_other": "{{count}} نتیجه یافت شد",
+		"resultTooltip": "امتیاز شباهت: {{score}} (برای باز کردن فایل کلیک کنید)"
+	},
+	"commandOutput": "خروجی دستور",
+	"commandExecution": {
+		"abort": "لغو",
+		"running": "در حال اجرا",
+		"pid": "PID: {{pid}}",
+		"exitStatus": "با وضعیت {{exitCode}} خارج شد",
+		"manageCommands": "دستورات تأیید خودکار",
+		"addToAllowed": "افزودن به لیست مجاز",
+		"removeFromAllowed": "حذف از لیست مجاز",
+		"addToDenied": "افزودن به لیست رد شده",
+		"removeFromDenied": "حذف از لیست رد شده",
+		"abortCommand": "لغو اجرای دستور",
+		"expandOutput": "باز کردن خروجی",
+		"collapseOutput": "جمع کردن خروجی"
+	},
+	"response": "پاسخ",
+	"arguments": "آرگومان‌ها",
+	"text": {
+		"rooSaid": "دستیار راد گفت"
+	},
+	"feedback": {
+		"youSaid": "شما گفتید"
+	},
+	"mcp": {
+		"wantsToUseTool": "دستیار راد می‌خواهد از یک ابزار در سرور MCP {{serverName}} استفاده کند",
+		"wantsToAccessResource": "دستیار راد می‌خواهد به یک منبع در سرور MCP {{serverName}} دسترسی پیدا کند"
+	},
+	"modes": {
+		"wantsToSwitch": "دستیار راد می‌خواهد به حالت {{mode}} تغییر کند",
+		"wantsToSwitchWithReason": "دستیار راد می‌خواهد به حالت {{mode}} تغییر کند زیرا: {{reason}}",
+		"didSwitch": "دستیار راد به حالت {{mode}} تغییر کرد",
+		"didSwitchWithReason": "دستیار راد به حالت {{mode}} تغییر کرد زیرا: {{reason}}"
+	},
+	"subtasks": {
+		"wantsToCreate": "دستیار راد می‌خواهد یک زیروظیفه جدید در حالت {{mode}} ایجاد کند",
+		"wantsToFinish": "دستیار راد می‌خواهد این زیروظیفه را تمام کند",
+		"newTaskContent": "دستورالعمل‌های زیروظیفه",
+		"completionContent": "زیروظیفه تکمیل شد",
+		"resultContent": "نتایج زیروظیفه",
+		"defaultResult": "لطفاً به وظیفه بعدی ادامه دهید.",
+		"completionInstructions": "زیروظیفه تکمیل شد! می‌توانید نتایج را بررسی کنید و اصلاحات یا مراحل بعدی را پیشنهاد دهید."
+	},
+	"questions": {
+		"hasQuestion": "دستیار راد یک سؤال دارد"
+	},
+	"taskCompleted": "وظیفه تکمیل شد",
+	"error": "خطا",
+	"errorDetails": {
+		"title": "جزئیات خطا",
+		"copyToClipboard": "کپی در کلیپ‌بورد",
+		"copied": "کپی شد!"
+	},
+	"diffError": {
+		"title": "ویرایش ناموفق"
+	},
+	"troubleMessage": "دستیار راد با مشکل مواجه شده است...",
+	"autoApprove": {
+		"tooltipManage": "مدیریت تنظیمات تأیید خودکار",
+		"tooltipStatus": "تأیید خودکار فعال برای: {{toggles}}",
+		"title": "تأیید خودکار",
+		"all": "همه",
+		"none": "هیچ‌کدام",
+		"description": "این اقدامات را بدون درخواست اجازه اجرا کنید. فقط برای اقداماتی که کاملاً به آنها اعتماد دارید فعال کنید.",
+		"selectOptionsFirst": "ابتدا حداقل یک گزینه را انتخاب کنید",
+		"toggleAriaLabel": "تغییر تأیید خودکار",
+		"disabledAriaLabel": "تأیید خودکار غیرفعال - ابتدا گزینه‌ها را انتخاب کنید",
+		"triggerLabelOff": "تأیید خودکار خاموش",
+		"triggerLabelOffShort": "خاموش",
+		"triggerLabel_zero": "۰ تأیید خودکار",
+		"triggerLabel_one": "۱ تأیید خودکار",
+		"triggerLabel_other": "{{count}} تأیید خودکار",
+		"triggerLabelAll": "همه"
+	},
+	"reasoning": {
+		"thinking": "در حال فکر کردن",
+		"seconds": "{{count}} ثانیه"
+	},
+	"browser": {
+		"session": "جلسه مرورگر",
+		"rooWantsToUse": "دستیار راد می‌خواهد از مرورگر استفاده کند",
+		"consoleLogs": "لاگ‌های کنسول",
+		"noNewLogs": "(لاگ جدیدی نیست)",
+		"screenshot": "عکس صفحه مرورگر",
+		"cursor": "نشانگر",
+		"navigation": {
+			"step": "مرحله {{current}} از {{total}}",
+			"previous": "قبلی",
+			"next": "بعدی"
+		},
+		"sessionStarted": "جلسه مرورگر شروع شد",
+		"actions": {
+			"title": "عمل مرورگر: ",
+			"launched": "مرورگر راه‌اندازی شد",
+			"launch": "راه‌اندازی مرورگر در {{url}}",
+			"clicked": "کلیک شد در: {{coordinate}}",
+			"click": "کلیک ({{coordinate}})",
+			"typed": "تایپ شد: {{text}}",
+			"type": "تایپ \"{{text}}\"",
+			"pressed": "کلید فشرده شد: {{key}}",
+			"press": "فشردن {{key}}",
+			"scrolledDown": "به پایین اسکرول شد",
+			"scrollDown": "اسکرول به پایین",
+			"scrolledUp": "به بالا اسکرول شد",
+			"scrollUp": "اسکرول به بالا",
+			"closed": "مرورگر بسته شد",
+			"close": "بستن مرورگر"
+		}
+	},
+	"codeblock": {
+		"tooltips": {
+			"expand": "باز کردن بلوک کد",
+			"collapse": "جمع کردن بلوک کد",
+			"enable_wrap": "فعال کردن شکستن خط",
+			"disable_wrap": "غیرفعال کردن شکستن خط",
+			"copy_code": "کپی کد"
+		}
+	},
+	"todo": {
+		"partial": "{{completed}} از {{total}} کار انجام شد",
+		"complete": "{{total}} کار انجام شد",
+		"updated": "لیست کارها به‌روزرسانی شد",
+		"completed": "تکمیل شد",
+		"started": "شروع شد"
+	}
+}

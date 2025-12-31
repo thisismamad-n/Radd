@@ -1,0 +1,28 @@
+{
+	"errors": {
+		"invalid_settings_format": "فرمت JSON تنظیمات MCP نامعتبر است. لطفاً مطمئن شوید تنظیمات از فرمت JSON صحیح پیروی می‌کنند.",
+		"invalid_settings_syntax": "فرمت JSON تنظیمات MCP نامعتبر است. لطفاً فایل تنظیمات را برای خطاهای نحوی بررسی کنید.",
+		"invalid_settings_validation": "فرمت تنظیمات MCP نامعتبر: {{errorMessages}}",
+		"create_json": "ایجاد یا باز کردن .kilocode/mcp.json ناموفق بود: {{error}}",
+		"failed_update_project": "به‌روزرسانی سرورهای MCP پروژه ناموفق بود",
+		"invalidJsonArgument": "دستیار راد سعی کرد از {{toolName}} با آرگومان JSON نامعتبر استفاده کند. در حال تلاش مجدد...",
+		"refresh_after_disable": "تازه‌سازی اتصالات MCP پس از غیرفعال‌سازی ناموفق بود",
+		"refresh_after_enable": "تازه‌سازی اتصالات MCP پس از فعال‌سازی ناموفق بود",
+		"disconnect_servers_partial": "قطع اتصال {{count}} سرور MCP ناموفق بود. خروجی را برای جزئیات بررسی کنید.",
+		"toolNotFound": "ابزار '{{toolName}}' روی سرور '{{serverName}}' وجود ندارد. ابزارهای موجود: {{availableTools}}",
+		"serverNotFound": "سرور MCP '{{serverName}}' پیکربندی نشده است. سرورهای موجود: {{availableServers}}",
+		"toolDisabled": "ابزار '{{toolName}}' روی سرور '{{serverName}}' غیرفعال است. ابزارهای فعال موجود: {{availableTools}}"
+	},
+	"info": {
+		"server_restarting": "در حال راه‌اندازی مجدد سرور MCP {{serverName}}...",
+		"server_connected": "سرور MCP {{serverName}} متصل شد",
+		"server_deleted": "سرور MCP حذف شد: {{serverName}}",
+		"server_not_found": "سرور \"{{serverName}}\" در پیکربندی یافت نشد",
+		"global_servers_active": "سرورهای MCP سراسری فعال: {{mcpServers}}",
+		"project_servers_active": "سرورهای MCP پروژه فعال: {{mcpServers}}",
+		"already_refreshing": "سرورهای MCP در حال تازه‌سازی هستند.",
+		"refreshing_all": "در حال تازه‌سازی همه سرورهای MCP...",
+		"all_refreshed": "همه سرورهای MCP تازه‌سازی شدند.",
+		"project_config_deleted": "فایل پیکربندی MCP پروژه حذف شد. همه سرورهای MCP پروژه قطع شدند."
+	}
+}

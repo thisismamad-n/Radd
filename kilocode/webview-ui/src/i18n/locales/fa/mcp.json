@@ -1,0 +1,65 @@
+{
+	"title": "سرورهای MCP",
+	"done": "انجام شد",
+	"marketplace": "بازارچه MCP",
+	"description": "<0>پروتکل زمینه مدل</0> ارتباط با سرورهای MCP محلی را فعال می‌کند که ابزارها و منابع اضافی برای گسترش قابلیت‌های دستیار راد فراهم می‌کنند.",
+	"instructions": "دستورالعمل‌ها",
+	"enableToggle": {
+		"title": "فعال‌سازی سرورهای MCP",
+		"description": "این را روشن کنید تا دستیار راد بتواند از ابزارهای سرورهای MCP متصل استفاده کند."
+	},
+	"enableServerCreation": {
+		"title": "فعال‌سازی ایجاد سرور MCP",
+		"description": "این را فعال کنید تا دستیار راد به شما در ساخت سرورهای MCP سفارشی <1>جدید</1> کمک کند. <0>درباره ایجاد سرور بیشتر بدانید</0>",
+		"hint": "نکته: برای کاهش هزینه توکن API، این تنظیم را وقتی فعالانه از دستیار راد نمی‌خواهید سرور MCP جدید بسازد، غیرفعال کنید."
+	},
+	"editGlobalMCP": "ویرایش MCP عمومی",
+	"editProjectMCP": "ویرایش MCP پروژه",
+	"refreshMCP": "بازخوانی سرورهای MCP",
+	"learnMoreEditingSettings": "درباره ویرایش فایل‌های تنظیمات MCP بیشتر بدانید",
+	"tool": {
+		"alwaysAllow": "همیشه اجازه بده",
+		"parameters": "پارامترها",
+		"noDescription": "بدون توضیحات",
+		"togglePromptInclusion": "تغییر وضعیت گنجاندن در پرامپت"
+	},
+	"tabs": {
+		"tools": "ابزارها",
+		"resources": "منابع",
+		"logs": "گزارش‌ها"
+	},
+	"emptyState": {
+		"noTools": "ابزاری یافت نشد",
+		"noResources": "منبعی یافت نشد",
+		"noLogs": "هنوز گزارشی نیست"
+	},
+	"networkTimeout": {
+		"label": "زمان انتظار شبکه",
+		"description": "حداکثر زمان انتظار برای پاسخ‌های سرور",
+		"options": {
+			"15seconds": "۱۵ ثانیه",
+			"30seconds": "۳۰ ثانیه",
+			"1minute": "۱ دقیقه",
+			"5minutes": "۵ دقیقه",
+			"10minutes": "۱۰ دقیقه",
+			"15minutes": "۱۵ دقیقه",
+			"30minutes": "۳۰ دقیقه",
+			"60minutes": "۶۰ دقیقه"
+		}
+	},
+	"deleteDialog": {
+		"title": "حذف سرور MCP",
+		"description": "آیا مطمئن هستید که می‌خواهید سرور MCP \"{{serverName}}\" را حذف کنید؟ این عمل قابل بازگشت نیست.",
+		"cancel": "لغو",
+		"delete": "حذف"
+	},
+	"serverStatus": {
+		"retrying": "در حال تلاش مجدد...",
+		"retryConnection": "تلاش مجدد اتصال"
+	},
+	"execution": {
+		"running": "در حال اجرا",
+		"completed": "تکمیل شد",
+		"error": "خطا"
+	}
+}

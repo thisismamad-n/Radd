@@ -1,0 +1,226 @@
+/**
+ * RTL (Right-to-Left) Support for Persian/Farsi
+ * پشتیبانی از راست به چپ برای زبان فارسی
+ */
+
+/* RTL Base Styles */
+[dir="rtl"],
+.rtl {
+  direction: rtl;
+  text-align: right;
+}
+
+/* RTL for specific elements */
+[dir="rtl"] .chat-input,
+[dir="rtl"] .message-content,
+[dir="rtl"] .task-description,
+[dir="rtl"] textarea,
+[dir="rtl"] input[type="text"] {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Preserve LTR for code blocks */
+[dir="rtl"] pre,
+[dir="rtl"] code,
+[dir="rtl"] .code-block,
+[dir="rtl"] .hljs,
+[dir="rtl"] .monaco-editor {
+  direction: ltr;
+  text-align: left;
+}
+
+/* RTL Flexbox adjustments */
+[dir="rtl"] .flex-row {
+  flex-direction: row-reverse;
+}
+
+/* RTL Icon positioning */
+[dir="rtl"] .icon-left {
+  margin-left: 0.5rem;
+  margin-right: 0;
+}
+
+[dir="rtl"] .icon-right {
+  margin-right: 0.5rem;
+  margin-left: 0;
+}
+
+/* RTL Button groups */
+[dir="rtl"] .button-group {
+  flex-direction: row-reverse;
+}
+
+/* RTL List items */
+[dir="rtl"] ul,
+[dir="rtl"] ol {
+  padding-right: 1.5rem;
+  padding-left: 0;
+}
+
+/* RTL Sidebar */
+[dir="rtl"] .sidebar {
+  border-left: 1px solid var(--vscode-panel-border);
+  border-right: none;
+}
+
+/* RTL Chat messages */
+[dir="rtl"] .message-user {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+[dir="rtl"] .message-assistant {
+  margin-right: 0;
+  margin-left: auto;
+}
+
+/* RTL Tooltips */
+[dir="rtl"] .tooltip {
+  text-align: right;
+}
+
+/* RTL Form labels */
+[dir="rtl"] label {
+  text-align: right;
+}
+
+/* RTL Select dropdowns */
+[dir="rtl"] select {
+  text-align: right;
+  padding-right: 0.5rem;
+  padding-left: 1.5rem;
+}
+
+/* RTL Checkboxes and radios */
+[dir="rtl"] input[type="checkbox"],
+[dir="rtl"] input[type="radio"] {
+  margin-left: 0.5rem;
+  margin-right: 0;
+}
+
+/* RTL Progress bars */
+[dir="rtl"] .progress-bar {
+  direction: rtl;
+}
+
+/* RTL Breadcrumbs */
+[dir="rtl"] .breadcrumb-separator {
+  transform: scaleX(-1);
+}
+
+/* RTL Navigation arrows */
+[dir="rtl"] .nav-arrow-left {
+  transform: scaleX(-1);
+}
+
+[dir="rtl"] .nav-arrow-right {
+  transform: scaleX(-1);
+}
+
+/* RTL Tables */
+[dir="rtl"] table {
+  direction: rtl;
+}
+
+[dir="rtl"] th,
+[dir="rtl"] td {
+  text-align: right;
+}
+
+/* RTL Scrollbars (for browsers that support it) */
+[dir="rtl"]::-webkit-scrollbar {
+  direction: rtl;
+}
+
+/* Persian/Farsi specific font settings */
+[lang="fa"],
+[dir="rtl"] {
+  font-family: 'Vazirmatn', 'Tahoma', 'Arial', sans-serif;
+  line-height: 1.8;
+}
+
+/* Ensure numbers display correctly in RTL */
+[dir="rtl"] .number,
+[dir="rtl"] .price,
+[dir="rtl"] .date {
+  direction: ltr;
+  display: inline-block;
+}
+
+/* RTL Modal dialogs */
+[dir="rtl"] .modal-header {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .modal-close {
+  left: 1rem;
+  right: auto;
+}
+
+/* RTL Search input */
+[dir="rtl"] .search-input {
+  padding-right: 2.5rem;
+  padding-left: 0.75rem;
+}
+
+[dir="rtl"] .search-icon {
+  right: 0.75rem;
+  left: auto;
+}
+
+/* RTL Tabs */
+[dir="rtl"] .tabs {
+  flex-direction: row-reverse;
+}
+
+/* RTL Activity bar */
+[dir="rtl"] .activity-bar {
+  border-left: 1px solid var(--vscode-activityBar-border);
+  border-right: none;
+}
+
+/* RTL Status bar */
+[dir="rtl"] .status-bar {
+  flex-direction: row-reverse;
+}
+
+/* RTL Tree view */
+[dir="rtl"] .tree-item {
+  padding-right: calc(var(--indent-level, 0) * 1rem);
+  padding-left: 0;
+}
+
+[dir="rtl"] .tree-item-icon {
+  margin-left: 0.5rem;
+  margin-right: 0;
+}
+
+/* RTL Notifications */
+[dir="rtl"] .notification {
+  text-align: right;
+}
+
+[dir="rtl"] .notification-icon {
+  margin-left: 0.75rem;
+  margin-right: 0;
+}
+
+/* RTL Command palette */
+[dir="rtl"] .command-palette-input {
+  text-align: right;
+}
+
+/* RTL Quick pick */
+[dir="rtl"] .quick-pick-item {
+  flex-direction: row-reverse;
+}
+
+/* RTL Settings */
+[dir="rtl"] .setting-item {
+  text-align: right;
+}
+
+[dir="rtl"] .setting-item-description {
+  text-align: right;
+}

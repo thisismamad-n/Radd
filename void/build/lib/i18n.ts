@@ -48,7 +48,8 @@ export const defaultLanguages: Language[] = [
 export const extraLanguages: Language[] = [
 	{ id: 'pt-br', folderName: 'ptb' },
 	{ id: 'hu', folderName: 'hun' },
-	{ id: 'tr', folderName: 'trk' }
+	{ id: 'tr', folderName: 'trk' },
+	{ id: 'fa', folderName: 'fas' }  // Persian (Farsi) - RTL language
 ];
 
 interface Item {

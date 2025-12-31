@@ -1,0 +1,276 @@
+{
+	"extension": {
+		"name": "دستیار راد",
+		"description": "دستیار هوشمند کسب و کار برای تحلیل، پژوهش و مدیریت اسناد."
+	},
+	"number_format": {
+		"thousand_suffix": "هزار",
+		"million_suffix": "میلیون",
+		"billion_suffix": "میلیارد"
+	},
+	"feedback": {
+		"title": "بازخورد",
+		"description": "خوشحال می‌شویم نظرات شما را بشنویم یا در رفع مشکلات کمکتان کنیم.",
+		"githubIssues": "گزارش مشکل در GitHub",
+		"githubDiscussions": "شرکت در بحث‌های GitHub",
+		"discord": "عضویت در انجمن Discord",
+		"customerSupport": "پشتیبانی مشتریان"
+	},
+	"welcome": "سلام {{name}}! شما {{count}} اعلان دارید.",
+	"items": {
+		"zero": "هیچ موردی نیست",
+		"one": "یک مورد",
+		"other": "{{count}} مورد"
+	},
+	"confirmation": {
+		"reset_state": "آیا مطمئن هستید که می‌خواهید تمام وضعیت و فضای ذخیره‌سازی را بازنشانی کنید؟ این عمل قابل بازگشت نیست.",
+		"delete_config_profile": "آیا مطمئن هستید که می‌خواهید این پروفایل پیکربندی را حذف کنید؟",
+		"delete_custom_mode_with_rules": "آیا مطمئن هستید که می‌خواهید این حالت {scope} را حذف کنید؟\n\nاین کار پوشه قوانین مرتبط را نیز حذف می‌کند:\n{rulesFolderPath}",
+		"delete_message": "چه چیزی را می‌خواهید حذف کنید؟",
+		"edit_warning": "ویرایش این پیام تمام پیام‌های بعدی در مکالمه را حذف می‌کند. ادامه می‌دهید؟",
+		"delete_just_this_message": "فقط این پیام",
+		"delete_this_and_subsequent": "این پیام و همه پیام‌های بعدی",
+		"proceed": "ادامه"
+	}
+,
+	"errors": {
+		"invalid_data_uri": "فرمت URI داده نامعتبر است",
+		"error_copying_image": "خطا در کپی تصویر: {{errorMessage}}",
+		"error_opening_image": "خطا در باز کردن تصویر: {{error}}",
+		"error_saving_image": "خطا در ذخیره تصویر: {{errorMessage}}",
+		"could_not_open_file": "امکان باز کردن فایل وجود ندارد: {{errorMessage}}",
+		"could_not_open_file_generic": "امکان باز کردن فایل وجود ندارد!",
+		"checkpoint_timeout": "زمان بازیابی نقطه ذخیره به پایان رسید.",
+		"checkpoint_failed": "بازیابی نقطه ذخیره ناموفق بود.",
+		"git_not_installed": "Git برای قابلیت نقاط ذخیره لازم است. لطفاً Git را نصب کنید.",
+		"checkpoint_no_first": "نقطه ذخیره اولی برای مقایسه وجود ندارد.",
+		"checkpoint_no_previous": "نقطه ذخیره قبلی برای مقایسه وجود ندارد.",
+		"checkpoint_no_changes": "تغییری یافت نشد.",
+		"checkpoint_diff_with_next": "تغییرات نسبت به نقطه ذخیره بعدی",
+		"checkpoint_diff_since_first": "تغییرات از نقطه ذخیره اول",
+		"checkpoint_diff_to_current": "تغییرات تا فضای کار فعلی",
+		"nested_git_repos_warning": "نقاط ذخیره غیرفعال شده‌اند زیرا یک مخزن git تودرتو در این مسیر شناسایی شد: {{path}}. برای استفاده از نقاط ذخیره، لطفاً این مخزن تودرتو را حذف یا جابجا کنید.",
+		"no_workspace": "لطفاً ابتدا یک پوشه پروژه باز کنید",
+		"update_support_prompt": "به‌روزرسانی پیام پشتیبانی ناموفق بود",
+		"reset_support_prompt": "بازنشانی پیام پشتیبانی ناموفق بود",
+		"enhance_prompt": "بهبود پیام ناموفق بود",
+		"get_system_prompt": "دریافت پیام سیستم ناموفق بود",
+		"search_commits": "جستجوی کامیت‌ها ناموفق بود",
+		"save_api_config": "ذخیره پیکربندی API ناموفق بود",
+		"create_api_config": "ایجاد پیکربندی API ناموفق بود",
+		"rename_api_config": "تغییر نام پیکربندی API ناموفق بود",
+		"load_api_config": "بارگذاری پیکربندی API ناموفق بود",
+		"delete_api_config": "حذف پیکربندی API ناموفق بود",
+		"list_api_config": "دریافت لیست پیکربندی API ناموفق بود",
+		"update_server_timeout": "به‌روزرسانی زمان انتظار سرور ناموفق بود",
+		"hmr_not_running": "سرور توسعه محلی در حال اجرا نیست، HMR کار نخواهد کرد. لطفاً قبل از راه‌اندازی افزونه 'npm run dev' را اجرا کنید.",
+		"retrieve_current_mode": "خطا: دریافت حالت فعلی از وضعیت ناموفق بود.",
+		"failed_delete_repo": "حذف مخزن سایه یا شاخه مرتبط ناموفق بود: {{error}}",
+		"failed_remove_directory": "حذف پوشه وظیفه ناموفق بود: {{error}}",
+		"custom_storage_path_unusable": "مسیر ذخیره‌سازی سفارشی \"{{path}}\" قابل استفاده نیست، از مسیر پیش‌فرض استفاده می‌شود",
+		"cannot_access_path": "دسترسی به مسیر {{path}} امکان‌پذیر نیست: {{error}}",
+		"settings_import_failed": "وارد کردن تنظیمات ناموفق بود: {{error}}.",
+		"mistake_limit_guidance": "این ممکن است نشان‌دهنده مشکل در استدلال مدل یا ناتوانی در استفاده صحیح از ابزار باشد. یکی از موارد زیر را امتحان کنید:\n\n• از مدل هوشمندتر یا متفاوت استفاده کنید\n• مقدار زمینه را کاهش دهید (پیام را ساده‌تر کنید)\n• دستورالعمل‌های اضافی ارائه دهید (مثلاً \"وظیفه را به مراحل کوچک‌تر تقسیم کن\")",
+		"violated_organization_allowlist": "اجرای وظیفه ناموفق بود: پروفایل فعلی با تنظیمات سازمان شما سازگار نیست",
+		"condense_failed": "فشرده‌سازی زمینه ناموفق بود",
+		"condense_not_enough_messages": "پیام‌های کافی برای فشرده‌سازی زمینه {{prevContextTokens}} توکن وجود ندارد. حداقل {{minimumMessageCount}} پیام لازم است، اما فقط {{messageCount}} پیام موجود است.",
+		"condensed_recently": "زمینه اخیراً فشرده شده است؛ این تلاش نادیده گرفته می‌شود",
+		"condense_handler_invalid": "کنترل‌کننده API برای فشرده‌سازی زمینه نامعتبر است",
+		"condense_context_grew": "اندازه زمینه از {{prevContextTokens}} به {{newContextTokens}} در حین فشرده‌سازی افزایش یافت؛ این تلاش نادیده گرفته می‌شود",
+		"url_timeout": "بارگذاری وب‌سایت بیش از حد طول کشید (زمان انتظار). این ممکن است به دلیل اتصال کند، سنگینی وب‌سایت یا عدم دسترسی موقت باشد.",
+		"url_not_found": "آدرس وب‌سایت یافت نشد. لطفاً صحت URL را بررسی کنید.",
+		"no_internet": "اتصال اینترنت وجود ندارد. لطفاً اتصال شبکه را بررسی کنید.",
+		"url_forbidden": "دسترسی به این وب‌سایت ممنوع است. سایت ممکن است دسترسی خودکار را مسدود کند یا نیاز به احراز هویت داشته باشد.",
+		"url_page_not_found": "صفحه یافت نشد. لطفاً صحت URL را بررسی کنید.",
+		"url_request_aborted": "درخواست دریافت URL لغو شد. این ممکن است به دلیل مسدود کردن دسترسی خودکار توسط سایت، نیاز به احراز هویت یا مشکل شبکه باشد.",
+		"url_fetch_failed": "دریافت محتوای URL ناموفق بود: {{error}}",
+		"url_fetch_error_with_url": "خطا در دریافت محتوای {{url}}: {{error}}",
+		"command_timeout": "اجرای دستور پس از {{seconds}} ثانیه به پایان رسید",
+		"share_task_failed": "اشتراک‌گذاری وظیفه ناموفق بود. لطفاً دوباره تلاش کنید.",
+		"share_no_active_task": "وظیفه فعالی برای اشتراک‌گذاری وجود ندارد",
+		"share_auth_required": "برای اشتراک‌گذاری وظایف باید وارد شوید.",
+		"share_not_enabled": "اشتراک‌گذاری وظیفه برای این سازمان فعال نیست.",
+		"share_task_not_found": "وظیفه یافت نشد یا دسترسی رد شد.",
+		"mode_import_failed": "وارد کردن حالت ناموفق بود: {{error}}",
+		"delete_rules_folder_failed": "حذف پوشه قوانین ناموفق بود: {{rulesFolderPath}}. خطا: {{error}}",
+		"command_not_found": "دستور '{{name}}' یافت نشد",
+		"open_command_file": "باز کردن فایل دستور ناموفق بود",
+		"delete_command": "حذف دستور ناموفق بود",
+		"no_workspace_for_project_command": "پوشه فضای کار برای دستور پروژه یافت نشد",
+		"command_already_exists": "دستور \"{{commandName}}\" از قبل وجود دارد",
+		"create_command_failed": "ایجاد دستور ناموفق بود",
+		"command_template_content": "---\ndescription: \"توضیح مختصر درباره کار این دستور\"\n---\n\nاین یک دستور جدید است. این فایل را برای سفارشی‌سازی رفتار دستور ویرایش کنید."
+,
+		"claudeCode": {
+			"processExited": "فرآیند Claude Code با کد {{exitCode}} خارج شد.",
+			"errorOutput": "خروجی خطا: {{output}}",
+			"processExitedWithError": "فرآیند Claude Code با کد {{exitCode}} خارج شد. خروجی خطا: {{output}}",
+			"stoppedWithReason": "Claude Code با دلیل متوقف شد: {{reason}}",
+			"apiKeyModelPlanMismatch": "کلیدهای API و طرح‌های اشتراک مدل‌های مختلفی را مجاز می‌کنند. مطمئن شوید مدل انتخاب شده در طرح شما گنجانده شده است.",
+			"notFound": "فایل اجرایی Claude Code '{{claudePath}}' یافت نشد.\n\nلطفاً Claude Code CLI را نصب کنید:\n1. برای دانلود به {{installationUrl}} مراجعه کنید\n2. دستورالعمل‌های نصب را دنبال کنید\n3. مطمئن شوید دستور 'claude' در PATH موجود است\n4. یا مسیر سفارشی را در تنظیمات پیکربندی کنید\n\nخطای اصلی: {{originalError}}"
+		},
+		"geminiCli": {
+			"oauthLoadFailed": "بارگذاری اعتبارنامه‌های OAuth ناموفق بود. لطفاً ابتدا احراز هویت کنید: {{error}}",
+			"tokenRefreshFailed": "تازه‌سازی توکن OAuth ناموفق بود: {{error}}",
+			"onboardingTimeout": "عملیات راه‌اندازی پس از ۶۰ ثانیه به پایان رسید. لطفاً بعداً دوباره تلاش کنید.",
+			"projectDiscoveryFailed": "شناسایی شناسه پروژه امکان‌پذیر نبود. مطمئن شوید با 'gemini auth' احراز هویت شده‌اید.",
+			"rateLimitExceeded": "محدودیت نرخ تجاوز شد. محدودیت‌های سطح رایگان به پایان رسیده است.",
+			"badRequest": "درخواست نامعتبر: {{details}}",
+			"apiError": "خطای API Gemini CLI: {{error}}",
+			"completionError": "خطای تکمیل Gemini CLI: {{error}}"
+		},
+		"qwenCode": {
+			"oauthLoadFailed": "بارگذاری اعتبارنامه‌های OAuth ناموفق بود. لطفاً ابتدا احراز هویت کنید: {{error}}"
+		},
+		"message": {
+			"no_active_task_to_delete": "وظیفه فعالی برای حذف پیام‌ها وجود ندارد",
+			"invalid_timestamp_for_deletion": "برچسب زمانی نامعتبر برای حذف",
+			"cannot_delete_missing_timestamp": "حذف پیام امکان‌پذیر نیست: برچسب زمانی موجود نیست",
+			"cannot_delete_invalid_timestamp": "حذف پیام امکان‌پذیر نیست: برچسب زمانی نامعتبر",
+			"message_not_found": "پیام با برچسب زمانی {{messageTs}} یافت نشد",
+			"error_deleting_message": "خطا در حذف پیام: {{error}}",
+			"error_editing_message": "خطا در ویرایش پیام: {{error}}"
+		},
+		"gemini": {
+			"generate_stream": "خطای جریان زمینه Gemini: {{error}}",
+			"generate_complete_prompt": "خطای تکمیل Gemini: {{error}}",
+			"sources": "منابع:",
+			"thinking_complete_no_output": "(تفکر کامل شد، اما خروجی تولید نشد.)",
+			"thinking_complete_truncated": "(تفکر کامل شد، اما خروجی به دلیل محدودیت توکن کوتاه شد.)",
+			"thinking_complete_safety": "(تفکر کامل شد، اما خروجی به دلیل تنظیمات ایمنی مسدود شد.)",
+			"thinking_complete_recitation": "(تفکر کامل شد، اما خروجی به دلیل بررسی تکرار مسدود شد.)"
+		},
+		"cerebras": {
+			"authenticationFailed": "احراز هویت API Cerebras ناموفق بود. لطفاً کلید API خود را بررسی کنید.",
+			"accessForbidden": "دسترسی به API Cerebras ممنوع است. کلید API شما ممکن است به مدل یا ویژگی درخواستی دسترسی نداشته باشد.",
+			"rateLimitExceeded": "محدودیت نرخ API Cerebras تجاوز شد. لطفاً قبل از درخواست بعدی صبر کنید.",
+			"serverError": "خطای سرور API Cerebras ({{status}}). لطفاً بعداً دوباره تلاش کنید.",
+			"genericError": "خطای API Cerebras ({{status}}): {{message}}",
+			"noResponseBody": "خطای API Cerebras: بدنه پاسخ وجود ندارد",
+			"completionError": "خطای تکمیل Cerebras: {{error}}"
+		},
+		"roo": {
+			"authenticationRequired": "ارائه‌دهنده Roo نیاز به احراز هویت ابری دارد. لطفاً وارد Roo Code Cloud شوید."
+		},
+		"api": {
+			"invalidKeyInvalidChars": "کلید API حاوی کاراکترهای نامعتبر است."
+		},
+		"manual_url_empty": "لطفاً یک URL بازگشت معتبر وارد کنید",
+		"manual_url_no_query": "URL بازگشت نامعتبر: پارامترهای پرس‌وجو موجود نیست",
+		"manual_url_missing_params": "URL بازگشت نامعتبر: پارامترهای مورد نیاز (code و state) موجود نیست",
+		"manual_url_auth_failed": "احراز هویت URL دستی ناموفق بود",
+		"manual_url_auth_error": "احراز هویت ناموفق بود"
+	}
+,
+	"warnings": {
+		"no_terminal_content": "محتوای ترمینال انتخاب نشده است",
+		"missing_task_files": "فایل‌های این وظیفه موجود نیست. آیا می‌خواهید آن را از لیست وظایف حذف کنید؟",
+		"auto_import_failed": "وارد کردن خودکار تنظیمات ناموفق بود: {{error}}"
+	},
+	"info": {
+		"no_changes": "تغییری یافت نشد.",
+		"clipboard_copy": "پیام سیستم با موفقیت در کلیپ‌بورد کپی شد",
+		"history_cleanup": "{{count}} وظیفه با فایل‌های ناموجود از تاریخچه پاک شد.",
+		"custom_storage_path_set": "مسیر ذخیره‌سازی سفارشی تنظیم شد: {{path}}",
+		"default_storage_path": "به استفاده از مسیر ذخیره‌سازی پیش‌فرض بازگشت",
+		"settings_imported": "تنظیمات با موفقیت وارد شد.",
+		"auto_import_success": "تنظیمات به طور خودکار از {{filename}} وارد شد",
+		"share_link_copied": "لینک اشتراک‌گذاری کپی شد",
+		"organization_share_link_copied": "لینک اشتراک‌گذاری سازمان کپی شد!",
+		"public_share_link_copied": "لینک اشتراک‌گذاری عمومی کپی شد!",
+		"session_share_link_copied_with_url": "جلسه به اشتراک گذاشته شد! لینک در کلیپ‌بورد کپی شد: {{url}}",
+		"image_copied_to_clipboard": "داده تصویر در کلیپ‌بورد کپی شد",
+		"image_saved": "تصویر در {{path}} ذخیره شد",
+		"mode_exported": "حالت '{{mode}}' با موفقیت صادر شد",
+		"mode_imported": "حالت با موفقیت وارد شد"
+	},
+	"answers": {
+		"yes": "بله",
+		"no": "خیر",
+		"cancel": "لغو",
+		"remove": "حذف",
+		"keep": "نگه‌داری"
+	},
+	"buttons": {
+		"save": "ذخیره",
+		"edit": "ویرایش",
+		"learn_more": "بیشتر بدانید"
+	},
+	"tasks": {
+		"canceled": "خطای وظیفه: توسط کاربر متوقف و لغو شد.",
+		"deleted": "شکست وظیفه: توسط کاربر متوقف و حذف شد.",
+		"incomplete": "وظیفه #{{taskNumber}} (ناتمام)",
+		"no_messages": "وظیفه #{{taskNumber}} (بدون پیام)"
+	},
+	"interruption": {
+		"responseInterruptedByUser": "پاسخ توسط کاربر قطع شد",
+		"responseInterruptedByApiError": "پاسخ به دلیل خطای API قطع شد"
+	},
+	"storage": {
+		"prompt_custom_path": "مسیر ذخیره‌سازی سفارشی تاریخچه مکالمات را وارد کنید، برای استفاده از مکان پیش‌فرض خالی بگذارید",
+		"path_placeholder": "D:\\RaddStorage",
+		"enter_absolute_path": "لطفاً یک مسیر مطلق وارد کنید (مثلاً D:\\RaddStorage یا /home/user/storage)",
+		"enter_valid_path": "لطفاً یک مسیر معتبر وارد کنید"
+	},
+	"input": {
+		"task_prompt": "دستیار راد چه کاری انجام دهد؟",
+		"task_placeholder": "بساز، پیدا کن، سؤال بپرس"
+	},
+	"customModes": {
+		"errors": {
+			"yamlParseError": "YAML نامعتبر در فایل .kilocodemodes در خط {{line}}. لطفاً بررسی کنید:\n• تورفتگی صحیح (از فاصله استفاده کنید، نه تب)\n• نقل‌قول‌ها و براکت‌های منطبق\n• نحو YAML معتبر",
+			"schemaValidationError": "فرمت حالت‌های سفارشی نامعتبر در .kilocodemodes:\n{{issues}}",
+			"invalidFormat": "فرمت حالت‌های سفارشی نامعتبر است. لطفاً مطمئن شوید تنظیمات از فرمت YAML صحیح پیروی می‌کنند.",
+			"updateFailed": "به‌روزرسانی حالت سفارشی ناموفق بود: {{error}}",
+			"deleteFailed": "حذف حالت سفارشی ناموفق بود: {{error}}",
+			"resetFailed": "بازنشانی حالت‌های سفارشی ناموفق بود: {{error}}",
+			"modeNotFound": "خطای نوشتن: حالت یافت نشد",
+			"noWorkspaceForProject": "پوشه فضای کار برای حالت خاص پروژه یافت نشد",
+			"rulesCleanupFailed": "حالت با موفقیت حذف شد، اما حذف پوشه قوانین در {{rulesFolderPath}} ناموفق بود. ممکن است نیاز به حذف دستی داشته باشید."
+		},
+		"scope": {
+			"project": "پروژه",
+			"global": "سراسری"
+		}
+	},
+	"marketplace": {
+		"mode": {
+			"rulesCleanupFailed": "حالت با موفقیت حذف شد، اما حذف پوشه قوانین در {{rulesFolderPath}} ناموفق بود. ممکن است نیاز به حذف دستی داشته باشید."
+		}
+	},
+	"mdm": {
+		"errors": {
+			"cloud_auth_required": "سازمان شما نیاز به احراز هویت ابری دارد. لطفاً برای ادامه وارد شوید.",
+			"organization_mismatch": "باید با حساب سازمان خود احراز هویت شوید.",
+			"verification_failed": "تأیید احراز هویت سازمان امکان‌پذیر نبود."
+		},
+		"info": {
+			"organization_requires_auth": "سازمان شما نیاز به احراز هویت دارد."
+		}
+	},
+	"prompts": {
+		"deleteMode": {
+			"title": "حذف حالت سفارشی",
+			"description": "آیا مطمئن هستید که می‌خواهید این حالت {{scope}} را حذف کنید؟ این کار پوشه قوانین مرتبط را نیز حذف می‌کند: {{rulesFolderPath}}",
+			"descriptionNoRules": "آیا مطمئن هستید که می‌خواهید این حالت سفارشی را حذف کنید؟",
+			"confirm": "حذف"
+		}
+	},
+	"commands": {
+		"preventCompletionWithOpenTodos": {
+			"description": "جلوگیری از تکمیل وظیفه در صورت وجود موارد ناتمام در لیست کارها"
+		}
+	},
+	"docsLink": {
+		"label": "مستندات",
+		"url": "https://radd.ir/docs"
+	},
+	"errorBoundary": {
+		"title": "خطا",
+		"reportText": "لطفاً این خطا را گزارش دهید تا به بهبود برنامه کمک کنید.",
+		"githubText": "گزارش در GitHub",
+		"copyInstructions": "جزئیات خطا را در زیر کپی کنید:",
+		"errorStack": "پشته خطا",
+		"componentStack": "پشته کامپوننت"
+	}
+}
