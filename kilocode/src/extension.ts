@@ -1,6 +1,8 @@
 import * as vscode from "vscode"
 import * as dotenvx from "@dotenvx/dotenvx"
 import * as path from "path"
+import * as os from "os"
+import * as fs from "fs" // kilocode_change
 
 // Load environment variables from .env file
 try {
@@ -50,6 +52,8 @@ import { SettingsSyncService } from "./services/settings-sync/SettingsSyncServic
 import { ManagedIndexer } from "./services/code-index/managed/ManagedIndexer" // kilocode_change
 import { flushModels, getModels, initializeModelCacheRefresh } from "./api/providers/fetchers/modelCache"
 import { kilo_initializeSessionManager } from "./shared/kilocode/cli-sessions/extension/session-manager-utils" // kilocode_change
+import { OnboardingPanel } from "./onboarding/OnboardingPanel" // kilocode_change
+import { WelcomePanel } from "./welcome/WelcomePanel" // kilocode_change
 
 // kilocode_change start
 async function findKilocodeTokenFromAnyProfile(provider: ClineProvider): Promise<string | undefined> {
@@ -347,32 +351,28 @@ export async function activate(context: vscode.ExtensionContext) {
 	if (!context.globalState.get("firstInstallCompleted")) {
 		outputChannel.appendLine("First installation detected, opening Kilo Code sidebar!")
 		try {
-			await vscode.commands.executeCommand("kilo-code.SidebarProvider.focus")
+			await vscode.commands.executeCommand("radd-assistant.SidebarProvider.focus")
 
-			outputChannel.appendLine("Opening Kilo Code walkthrough")
-
-			// this can crash, see:
-			// https://discord.com/channels/1349288496988160052/1395865796026040470
-			await vscode.commands.executeCommand(
-				"workbench.action.openWalkthrough",
-				"kilocode.kilo-code#kiloCodeWalkthrough",
-				false,
-			)
-
-			// Enable autocomplete by default for new installs, but not for JetBrains IDEs
-			// JetBrains users can manually enable it if they want to test the feature
-			const { kiloCodeWrapperJetbrains } = getKiloCodeWrapperProperties()
-			const currentGhostSettings = contextProxy.getValue("ghostServiceSettings")
-			await contextProxy.setValue("ghostServiceSettings", {
-				...currentGhostSettings,
-				enableAutoTrigger: !kiloCodeWrapperJetbrains,
-				enableQuickInlineTaskKeybinding: true,
-				enableSmartInlineTaskKeybinding: true,
-			})
+			outputChannel.appendLine("Opening Radd Onboarding Wizard")
+			// kilocode_change: use custom onboarding instead of walkthrough
+			await vscode.commands.executeCommand("radd.openOnboarding")
 		} catch (error) {
 			outputChannel.appendLine(`Error during first-time setup: ${error.message}`)
 		} finally {
+			// We set this to true AFTER users finish onboarding in the real world, 
+			// but for safety we set it here or let the wizard set a DIFFERENT flag.
+			// For now, keep it compatible.
 			await context.globalState.update("firstInstallCompleted", true)
+		}
+	} else {
+		// If not first install, check if we should show welcome page
+		// Only if no editor is open and no workspace folder is open (or maybe even if workspace is open)
+		// For MVP, if no editor is active, show welcome.
+		if (!vscode.window.activeTextEditor) {
+			// Delay slightly to let layout settle
+			setTimeout(() => {
+				vscode.commands.executeCommand("radd.openWelcome")
+			}, 500)
 		}
 	}
 	// kilocode_change end
@@ -476,6 +476,42 @@ export async function activate(context: vscode.ExtensionContext) {
 
 	registerCodeActions(context)
 	registerTerminalActions(context)
+
+	// kilocode_change: register onboarding command
+	context.subscriptions.push(
+		vscode.commands.registerCommand("radd.openOnboarding", () => {
+			OnboardingPanel.createOrShow(context)
+		}),
+		vscode.commands.registerCommand("radd.onboardingFinished", () => {
+			vscode.commands.executeCommand("workbench.action.closeActiveEditor")
+			vscode.commands.executeCommand("radd-assistant.SidebarProvider.focus")
+			// Open Welcome after onboarding
+			setTimeout(() => vscode.commands.executeCommand("radd.openWelcome"), 500)
+		}),
+		vscode.commands.registerCommand("radd.openWelcome", () => {
+			WelcomePanel.createOrShow(context)
+		}),
+		vscode.commands.registerCommand("radd.createSampleWorkspace", async () => {
+			const samplePath = path.join(context.extensionPath, "assets", "playground")
+			const targetPath = path.join(os.homedir(), "Documents", "Radd Playground")
+
+			try {
+				if (!fs.existsSync(samplePath)) {
+					vscode.window.showErrorMessage("Sample workspace assets not found!")
+					return
+				}
+
+				// Copy recursively
+				fs.cpSync(samplePath, targetPath, { recursive: true, force: true })
+
+				const uri = vscode.Uri.file(targetPath)
+				await vscode.commands.executeCommand("vscode.openFolder", uri)
+				vscode.window.showInformationMessage("Sample workspace created and opened!")
+			} catch (e) {
+				vscode.window.showErrorMessage(`Failed to create sample workspace: ${e}`)
+			}
+		})
+	)
 
 	// Allows other extensions to activate once Kilo Code is ready.
 	vscode.commands.executeCommand(`${Package.name}.activationCompleted`)

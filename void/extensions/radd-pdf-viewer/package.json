@@ -1,0 +1,196 @@
+{
+    "name": "radd-pdf-viewer",
+    "displayName": "Radd PDF Viewer - نمایشگر PDF",
+    "description": "نمایش فایل‌های PDF در محیط راد | View PDF files in Radd",
+    "version": "1.0.0",
+    "publisher": "radd-app",
+    "icon": "media/icon.png",
+    "license": "Apache-2.0",
+    "engines": {
+        "vscode": "^1.70.0"
+    },
+    "main": "./dist/extension.js",
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [],
+    "capabilities": {
+        "virtualWorkspaces": true,
+        "untrustedWorkspaces": {
+            "supported": true
+        }
+    },
+    "contributes": {
+        "customEditors": [
+            {
+                "viewType": "radd.pdfPreview",
+                "displayName": "نمایشگر PDF",
+                "priority": "default",
+                "selector": [
+                    {
+                        "filenamePattern": "*.pdf"
+                    }
+                ]
+            }
+        ],
+        "commands": [
+            {
+                "command": "radd.pdfViewer.zoomIn",
+                "title": "بزرگ‌نمایی",
+                "category": "PDF Viewer"
+            },
+            {
+                "command": "radd.pdfViewer.zoomOut",
+                "title": "کوچک‌نمایی",
+                "category": "PDF Viewer"
+            },
+            {
+                "command": "radd.pdfViewer.nextPage",
+                "title": "صفحه بعد",
+                "category": "PDF Viewer"
+            },
+            {
+                "command": "radd.pdfViewer.prevPage",
+                "title": "صفحه قبل",
+                "category": "PDF Viewer"
+            },
+            {
+                "command": "radd.pdfViewer.goToPage",
+                "title": "رفتن به صفحه",
+                "category": "PDF Viewer"
+            },
+            {
+                "command": "radd.pdfViewer.searchText",
+                "title": "جستجو در متن",
+                "category": "PDF Viewer"
+            },
+            {
+                "command": "radd.pdfViewer.copyText",
+                "title": "کپی متن",
+                "category": "PDF Viewer"
+            },
+            {
+                "command": "radd.pdfViewer.askAI",
+                "title": "پرسش از هوش مصنوعی",
+                "category": "PDF Viewer"
+            }
+        ],
+        "menus": {
+            "commandPalette": [
+                {
+                    "command": "radd.pdfViewer.zoomIn",
+                    "when": "activeCustomEditorId == 'radd.pdfPreview'"
+                },
+                {
+                    "command": "radd.pdfViewer.zoomOut",
+                    "when": "activeCustomEditorId == 'radd.pdfPreview'"
+                },
+                {
+                    "command": "radd.pdfViewer.nextPage",
+                    "when": "activeCustomEditorId == 'radd.pdfPreview'"
+                },
+                {
+                    "command": "radd.pdfViewer.prevPage",
+                    "when": "activeCustomEditorId == 'radd.pdfPreview'"
+                },
+                {
+                    "command": "radd.pdfViewer.askAI",
+                    "when": "activeCustomEditorId == 'radd.pdfPreview'"
+                }
+            ],
+            "webview/context": [
+                {
+                    "command": "radd.pdfViewer.copyText",
+                    "when": "webviewId == 'radd.pdfPreview'"
+                }
+            ]
+        },
+        "keybindings": [
+            {
+                "command": "radd.pdfViewer.zoomIn",
+                "key": "ctrl+=",
+                "when": "activeCustomEditorId == 'radd.pdfPreview'"
+            },
+            {
+                "command": "radd.pdfViewer.zoomOut",
+                "key": "ctrl+-",
+                "when": "activeCustomEditorId == 'radd.pdfPreview'"
+            },
+            {
+                "command": "radd.pdfViewer.nextPage",
+                "key": "pagedown",
+                "when": "activeCustomEditorId == 'radd.pdfPreview'"
+            },
+            {
+                "command": "radd.pdfViewer.prevPage",
+                "key": "pageup",
+                "when": "activeCustomEditorId == 'radd.pdfPreview'"
+            },
+            {
+                "command": "radd.pdfViewer.searchText",
+                "key": "ctrl+f",
+                "when": "activeCustomEditorId == 'radd.pdfPreview'"
+            }
+        ],
+        "configuration": {
+            "type": "object",
+            "title": "Radd PDF Viewer",
+            "properties": {
+                "radd.pdfViewer.defaultZoom": {
+                    "type": "string",
+                    "default": "page-fit",
+                    "enum": [
+                        "page-fit",
+                        "page-width",
+                        "50%",
+                        "75%",
+                        "100%",
+                        "125%",
+                        "150%",
+                        "200%"
+                    ],
+                    "description": "مقیاس پیش‌فرض نمایش PDF"
+                },
+                "radd.pdfViewer.sidebarVisible": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "نمایش نوار کناری (تصاویر کوچک صفحات)"
+                },
+                "radd.pdfViewer.spreadMode": {
+                    "type": "string",
+                    "default": "none",
+                    "enum": [
+                        "none",
+                        "odd",
+                        "even"
+                    ],
+                    "description": "حالت نمایش دوتایی صفحات"
+                },
+                "radd.pdfViewer.renderTextLayer": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "فعال‌سازی لایه متن برای انتخاب و جستجو"
+                }
+            }
+        }
+    },
+    "scripts": {
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "build": "webpack --mode production"
+    },
+    "devDependencies": {
+        "@types/node": "^20.0.0",
+        "@types/vscode": "^1.70.0",
+        "typescript": "^5.0.0",
+        "webpack": "^5.88.0",
+        "webpack-cli": "^5.1.0"
+    },
+    "dependencies": {
+        "pdfjs-dist": "^4.8.69"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/radd-app/radd"
+    }
+}

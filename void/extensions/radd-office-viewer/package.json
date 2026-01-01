@@ -1,0 +1,142 @@
+{
+    "name": "radd-office-viewer",
+    "displayName": "Radd Office Viewer - نمایشگر اسناد",
+    "description": "نمایش فایل‌های Word و Excel در محیط راد | View Office documents in Radd",
+    "version": "1.0.0",
+    "publisher": "radd-app",
+    "icon": "media/icon.png",
+    "license": "Apache-2.0",
+    "engines": {
+        "vscode": "^1.70.0"
+    },
+    "main": "./dist/extension.js",
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [],
+    "capabilities": {
+        "virtualWorkspaces": true,
+        "untrustedWorkspaces": {
+            "supported": true
+        }
+    },
+    "contributes": {
+        "customEditors": [
+            {
+                "viewType": "radd.docxPreview",
+                "displayName": "نمایشگر Word",
+                "priority": "default",
+                "selector": [
+                    {
+                        "filenamePattern": "*.docx"
+                    }
+                ]
+            },
+            {
+                "viewType": "radd.xlsxPreview",
+                "displayName": "نمایشگر Excel",
+                "priority": "default",
+                "selector": [
+                    {
+                        "filenamePattern": "*.xlsx"
+                    },
+                    {
+                        "filenamePattern": "*.xls"
+                    }
+                ]
+            }
+        ],
+        "commands": [
+            {
+                "command": "radd.officeViewer.refreshDocument",
+                "title": "بارگذاری مجدد سند",
+                "category": "Office Viewer"
+            },
+            {
+                "command": "radd.officeViewer.toggleTheme",
+                "title": "تغییر تم (روشن/تیره)",
+                "category": "Office Viewer"
+            },
+            {
+                "command": "radd.officeViewer.copyText",
+                "title": "کپی متن",
+                "category": "Office Viewer"
+            },
+            {
+                "command": "radd.officeViewer.askAI",
+                "title": "پرسش از هوش مصنوعی",
+                "category": "Office Viewer"
+            },
+            {
+                "command": "radd.officeViewer.exportAsText",
+                "title": "استخراج متن",
+                "category": "Office Viewer"
+            }
+        ],
+        "menus": {
+            "commandPalette": [
+                {
+                    "command": "radd.officeViewer.refreshDocument",
+                    "when": "activeCustomEditorId =~ /radd\\.(docx|xlsx)Preview/"
+                },
+                {
+                    "command": "radd.officeViewer.askAI",
+                    "when": "activeCustomEditorId =~ /radd\\.(docx|xlsx)Preview/"
+                }
+            ],
+            "webview/context": [
+                {
+                    "command": "radd.officeViewer.copyText",
+                    "when": "webviewId =~ /radd\\.(docx|xlsx)Preview/"
+                }
+            ]
+        },
+        "configuration": {
+            "type": "object",
+            "title": "Radd Office Viewer",
+            "properties": {
+                "radd.officeViewer.theme": {
+                    "type": "string",
+                    "default": "auto",
+                    "enum": [
+                        "auto",
+                        "light",
+                        "dark"
+                    ],
+                    "description": "تم نمایش اسناد (خودکار، روشن، تیره)"
+                },
+                "radd.officeViewer.wordWrap": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "شکستن خطوط بلند"
+                },
+                "radd.officeViewer.showAICapabilities": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "نمایش پیام قابلیت‌های هوش مصنوعی"
+                }
+            }
+        }
+    },
+    "scripts": {
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "build": "webpack --mode production"
+    },
+    "devDependencies": {
+        "@types/node": "^20.0.0",
+        "@types/vscode": "^1.70.0",
+        "typescript": "^5.0.0",
+        "webpack": "^5.88.0",
+        "webpack-cli": "^5.1.0"
+    },
+    "dependencies": {
+        "docx-preview": "^0.3.2",
+        "xlsx": "^0.18.5",
+        "mammoth": "^1.6.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/radd-app/radd"
+    }
+}

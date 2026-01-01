@@ -4,6 +4,25 @@
 	"engines": {
 		"node": "20.19.2"
 	},
+	"contributes": {
+		"commands": [
+			{
+				"command": "radd.openOnboarding",
+				"title": "Open Radd Onboarding",
+				"category": "Radd"
+			},
+			{
+				"command": "radd.openWelcome",
+				"title": "Open Radd Welcome",
+				"category": "Radd"
+			},
+			{
+				"command": "kilo-code.plusButtonClicked",
+				"title": "Plus Button Clicked",
+				"category": "Kilo Code"
+			}
+		]
+	},
 	"scripts": {
 		"preinstall": "node scripts/bootstrap.mjs",
 		"prepare": "husky",
