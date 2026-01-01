@@ -1,1 +1,1 @@
-export const kiloLanguages = ["ar", "cs", "th", "uk"] as const
+export const kiloLanguages = ["ar", "cs", "fa", "th", "uk"] as const

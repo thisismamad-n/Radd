@@ -42,8 +42,9 @@ import { toDisposable } from '../../../../base/common/lifecycle.js';
 import { Action2, registerAction2 } from '../../../../platform/actions/common/actions.js';
 import { ServicesAccessor } from '../../../../editor/browser/editorExtensions.js';
 import { IViewsService } from '../../../services/views/common/viewsService.js';
-import { IWorkbenchContribution, registerWorkbenchContribution2, WorkbenchPhase } from '../../../common/contributions.js';
-import { ICommandService } from '../../../../platform/commands/common/commands.js';
+// RADD: Commented out - no longer auto-opening Void sidebar
+// import { IWorkbenchContribution, registerWorkbenchContribution2, WorkbenchPhase } from '../../../common/contributions.js';
+// import { ICommandService } from '../../../../platform/commands/common/commands.js';
 
 // compare against search.contribution.ts and debug.contribution.ts, scm.contribution.ts (source control)
 
@@ -128,11 +129,11 @@ const container = viewContainerRegistry.registerViewContainer({
 const viewsRegistry = Registry.as<IViewsRegistry>(ViewExtensions.ViewsRegistry);
 viewsRegistry.registerViews([{
 	id: VOID_VIEW_ID,
-	hideByDefault: false, // start open
+	hideByDefault: true, // RADD: hide Void's chat by default, use Radd Assistant instead
 	// containerIcon: voidViewIcon,
 	name: nls.localize2('voidChat', ''), // this says ... : CHAT
 	ctorDescriptor: new SyncDescriptor(SidebarViewPane),
-	canToggleVisibility: false,
+	canToggleVisibility: true, // RADD: allow hiding
 	canMoveView: false, // can't move this out of its container
 	weight: 80,
 	order: 1,
@@ -163,12 +164,13 @@ registerAction2(class extends Action2 {
 	}
 });
 
-export class SidebarStartContribution implements IWorkbenchContribution {
-	static readonly ID = 'workbench.contrib.startupVoidSidebar';
-	constructor(
-		@ICommandService private readonly commandService: ICommandService,
-	) {
-		this.commandService.executeCommand(VOID_OPEN_SIDEBAR_ACTION_ID)
-	}
-}
-registerWorkbenchContribution2(SidebarStartContribution.ID, SidebarStartContribution, WorkbenchPhase.AfterRestored);
+// RADD: Disabled auto-open of Void sidebar - we use Radd Assistant instead
+// export class SidebarStartContribution implements IWorkbenchContribution {
+// 	static readonly ID = 'workbench.contrib.startupVoidSidebar';
+// 	constructor(
+// 		@ICommandService private readonly commandService: ICommandService,
+// 	) {
+// 		this.commandService.executeCommand(VOID_OPEN_SIDEBAR_ACTION_ID)
+// 	}
+// }
+// registerWorkbenchContribution2(SidebarStartContribution.ID, SidebarStartContribution, WorkbenchPhase.AfterRestored);

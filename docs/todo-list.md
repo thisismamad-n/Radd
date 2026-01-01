@@ -256,6 +256,8 @@
 - ✅ RTL CSS created - *kilocode/webview-ui/src/rtl.css with comprehensive styles*
 - ✅ RTL CSS imported - *Added to kilocode/webview-ui/src/index.css*
 - ✅ TranslationContext RTL support - *Already has dir={i18n.dir()} in TranslationContext.tsx*
+- ✅ Bidirectional text handling - *Added unicode-bidi rules for mixed Persian/English text*
+- ✅ package.nls.fa.json created - *kilocode/src/package.nls.fa.json for VS Code native localization*
 - ⬜ Manual testing with Persian text - *Requires build and runtime testing*
 - ⬜ Verify icons and buttons positions - *Requires build and runtime testing*
 - ⬜ Test chat interface with Persian input/output - *Requires build and runtime testing*

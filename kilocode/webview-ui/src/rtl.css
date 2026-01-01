@@ -202,6 +202,137 @@
   display: inline-block;
 }
 
+/* ===== BIDIRECTIONAL TEXT HANDLING ===== */
+/* Fix mixed Persian/English text display */
+
+/* Use Unicode Bidi Isolate for proper text direction */
+[dir="rtl"] {
+  unicode-bidi: isolate;
+}
+
+/* Isolate English/LTR content within RTL context */
+[dir="rtl"] .ltr-content,
+[dir="rtl"] [lang="en"],
+[dir="rtl"] .english-text {
+  direction: ltr;
+  unicode-bidi: isolate;
+  display: inline-block;
+}
+
+/* Embed LTR content properly in RTL flow */
+[dir="rtl"] .embed-ltr {
+  direction: ltr;
+  unicode-bidi: embed;
+}
+
+/* Force RTL for Persian text that might be affected by LTR content */
+[dir="rtl"] .force-rtl,
+[dir="rtl"] [lang="fa"] {
+  direction: rtl;
+  unicode-bidi: isolate-override;
+}
+
+/* Handle file paths, URLs, and technical strings */
+[dir="rtl"] .file-path,
+[dir="rtl"] .url,
+[dir="rtl"] .technical-string,
+[dir="rtl"] .command-text {
+  direction: ltr;
+  unicode-bidi: isolate;
+  display: inline-block;
+  text-align: left;
+}
+
+/* Handle mixed content in messages */
+[dir="rtl"] .message-content {
+  unicode-bidi: plaintext;
+}
+
+/* Proper handling of inline code in RTL */
+[dir="rtl"] code:not(pre code),
+[dir="rtl"] .inline-code {
+  direction: ltr;
+  unicode-bidi: isolate;
+  display: inline-block;
+}
+
+/* Handle variable names, function names, etc. */
+[dir="rtl"] .identifier,
+[dir="rtl"] .variable-name,
+[dir="rtl"] .function-name {
+  direction: ltr;
+  unicode-bidi: isolate;
+  display: inline-block;
+}
+
+/* Handle keyboard shortcuts */
+[dir="rtl"] kbd,
+[dir="rtl"] .keyboard-shortcut {
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+/* Handle version numbers and technical identifiers */
+[dir="rtl"] .version,
+[dir="rtl"] .model-name,
+[dir="rtl"] .api-key {
+  direction: ltr;
+  unicode-bidi: isolate;
+  display: inline-block;
+}
+
+/* Handle error messages that may contain English */
+[dir="rtl"] .error-message,
+[dir="rtl"] .warning-message {
+  unicode-bidi: plaintext;
+}
+
+/* Handle labels with mixed content */
+[dir="rtl"] label {
+  unicode-bidi: plaintext;
+}
+
+/* Handle button text with icons */
+[dir="rtl"] button {
+  unicode-bidi: plaintext;
+}
+
+/* Handle dropdown options */
+[dir="rtl"] option,
+[dir="rtl"] .dropdown-item {
+  unicode-bidi: plaintext;
+}
+
+/* Handle list items with mixed content */
+[dir="rtl"] li {
+  unicode-bidi: plaintext;
+}
+
+/* Handle headings with mixed content */
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3,
+[dir="rtl"] h4,
+[dir="rtl"] h5,
+[dir="rtl"] h6 {
+  unicode-bidi: plaintext;
+}
+
+/* Handle paragraphs with mixed content */
+[dir="rtl"] p {
+  unicode-bidi: plaintext;
+}
+
+/* Handle spans that might contain mixed content */
+[dir="rtl"] span {
+  unicode-bidi: plaintext;
+}
+
+/* Handle divs that might contain mixed content */
+[dir="rtl"] div {
+  unicode-bidi: plaintext;
+}
+
 /* RTL Modal dialogs */
 [dir="rtl"] .modal-header {
   flex-direction: row-reverse;
@@ -277,4 +408,201 @@
 
 [dir="rtl"] .setting-item-description {
   text-align: right;
+}
+
+
+/* ===== ADDITIONAL RTL FIXES FOR COMMON PATTERNS ===== */
+
+/* Fix chat input area */
+[dir="rtl"] .chat-input-container {
+  direction: rtl;
+}
+
+[dir="rtl"] .chat-input-container textarea {
+  text-align: right;
+  unicode-bidi: plaintext;
+}
+
+/* Fix message bubbles alignment */
+[dir="rtl"] .message-bubble {
+  unicode-bidi: plaintext;
+}
+
+/* Fix toolbar buttons order */
+[dir="rtl"] .toolbar {
+  flex-direction: row-reverse;
+}
+
+/* Fix action buttons */
+[dir="rtl"] .action-buttons {
+  flex-direction: row-reverse;
+}
+
+/* Fix menu items */
+[dir="rtl"] .menu-item {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+[dir="rtl"] .menu-item-icon {
+  margin-left: 0.5rem;
+  margin-right: 0;
+}
+
+/* Fix badges positioning */
+[dir="rtl"] .badge {
+  margin-left: 0;
+  margin-right: 0.25rem;
+}
+
+/* Fix close buttons */
+[dir="rtl"] .close-button {
+  left: 0.5rem;
+  right: auto;
+}
+
+/* Fix expand/collapse icons */
+[dir="rtl"] .expand-icon,
+[dir="rtl"] .collapse-icon {
+  transform: scaleX(-1);
+}
+
+/* Fix chevron icons */
+[dir="rtl"] .chevron-right {
+  transform: scaleX(-1);
+}
+
+[dir="rtl"] .chevron-left {
+  transform: scaleX(-1);
+}
+
+/* Fix file tree indentation */
+[dir="rtl"] .file-tree-item {
+  padding-right: calc(var(--depth, 0) * 1rem);
+  padding-left: 0;
+}
+
+/* Fix code diff view - keep LTR */
+[dir="rtl"] .diff-view,
+[dir="rtl"] .diff-content {
+  direction: ltr;
+  text-align: left;
+}
+
+/* Fix terminal output - keep LTR */
+[dir="rtl"] .terminal-output,
+[dir="rtl"] .command-output {
+  direction: ltr;
+  text-align: left;
+  font-family: var(--vscode-editor-font-family), monospace;
+}
+
+/* Fix JSON/code display */
+[dir="rtl"] .json-view,
+[dir="rtl"] .code-view {
+  direction: ltr;
+  text-align: left;
+}
+
+/* Fix placeholder text */
+[dir="rtl"] input::placeholder,
+[dir="rtl"] textarea::placeholder {
+  text-align: right;
+}
+
+/* Fix autocomplete dropdown */
+[dir="rtl"] .autocomplete-dropdown {
+  text-align: right;
+}
+
+/* Fix context menu */
+[dir="rtl"] .context-menu {
+  text-align: right;
+}
+
+[dir="rtl"] .context-menu-item {
+  flex-direction: row-reverse;
+}
+
+/* Fix toast notifications */
+[dir="rtl"] .toast {
+  text-align: right;
+}
+
+[dir="rtl"] .toast-icon {
+  margin-left: 0.5rem;
+  margin-right: 0;
+}
+
+/* Fix loading spinners - don't flip */
+[dir="rtl"] .spinner,
+[dir="rtl"] .loading-indicator {
+  /* Keep spinner animation direction - no transform needed */
+  transform: none;
+}
+
+/* Fix progress bars */
+[dir="rtl"] .progress-bar-fill {
+  transform-origin: right;
+}
+
+/* Fix slider controls */
+[dir="rtl"] input[type="range"] {
+  direction: rtl;
+}
+
+/* Fix switch/toggle controls */
+[dir="rtl"] .switch,
+[dir="rtl"] .toggle {
+  flex-direction: row-reverse;
+}
+
+/* Fix avatar positioning in messages */
+[dir="rtl"] .message-avatar {
+  margin-left: 0.5rem;
+  margin-right: 0;
+}
+
+/* Fix timestamp positioning */
+[dir="rtl"] .message-timestamp {
+  text-align: left;
+}
+
+/* Fix token/cost display - numbers should be LTR */
+[dir="rtl"] .token-count,
+[dir="rtl"] .cost-display {
+  direction: ltr;
+  unicode-bidi: isolate;
+  display: inline-block;
+}
+
+/* Fix model selector */
+[dir="rtl"] .model-selector {
+  text-align: right;
+}
+
+[dir="rtl"] .model-selector .model-name {
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+/* Fix settings labels */
+[dir="rtl"] .setting-label {
+  text-align: right;
+}
+
+[dir="rtl"] .setting-description {
+  text-align: right;
+}
+
+/* Fix API configuration display */
+[dir="rtl"] .api-config {
+  text-align: right;
+}
+
+[dir="rtl"] .api-config .api-key,
+[dir="rtl"] .api-config .api-url {
+  direction: ltr;
+  unicode-bidi: isolate;
+  text-align: left;
 }
