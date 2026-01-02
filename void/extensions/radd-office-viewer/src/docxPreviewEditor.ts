@@ -53,7 +53,6 @@ export class DocxPreviewEditorProvider implements vscode.CustomReadonlyEditorPro
         // Get configuration
         const config = vscode.workspace.getConfiguration('radd.officeViewer');
         const theme = config.get<string>('theme', 'auto');
-        const showAICapabilities = config.get<boolean>('showAICapabilities', true);
 
         // Read document
         const docData = await vscode.workspace.fs.readFile(document.uri);
@@ -63,7 +62,7 @@ export class DocxPreviewEditorProvider implements vscode.CustomReadonlyEditorPro
             webviewPanel.webview,
             docBase64,
             document.uri.fsPath,
-            { theme, showAICapabilities }
+            { theme }
         );
 
         // Handle messages
@@ -84,9 +83,6 @@ export class DocxPreviewEditorProvider implements vscode.CustomReadonlyEditorPro
                             `doc-text:${document.uri.toString()}`,
                             message.text
                         );
-                        break;
-                    case 'askAI':
-                        vscode.commands.executeCommand('radd.officeViewer.askAI');
                         break;
                 }
             },
@@ -113,7 +109,7 @@ export class DocxPreviewEditorProvider implements vscode.CustomReadonlyEditorPro
         webview: vscode.Webview,
         docBase64: string,
         fileName: string,
-        options: { theme: string; showAICapabilities: boolean }
+        options: { theme: string }
     ): string {
         const nonce = getNonce();
         const displayName = path.basename(fileName);
@@ -204,59 +200,6 @@ export class DocxPreviewEditorProvider implements vscode.CustomReadonlyEditorPro
 
         .document-title .icon {
             font-size: 20px;
-        }
-
-        /* AI Info Banner */
-        .ai-info-banner {
-            background: var(--info-bg);
-            border-bottom: 1px solid var(--accent-color);
-            padding: 12px 20px;
-            display: ${options.showAICapabilities ? 'flex' : 'none'};
-            align-items: center;
-            gap: 12px;
-            font-size: 13px;
-        }
-
-        .ai-info-banner .icon {
-            font-size: 24px;
-        }
-
-        .ai-info-banner .text {
-            flex: 1;
-        }
-
-        .ai-info-banner .text strong {
-            color: var(--accent-color);
-        }
-
-        .ai-info-banner button {
-            background: linear-gradient(135deg, var(--accent-color), #6366f1);
-            border: none;
-            color: white;
-            padding: 8px 16px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-family: inherit;
-            font-size: 13px;
-            transition: transform 0.2s ease;
-        }
-
-        .ai-info-banner button:hover {
-            transform: scale(1.02);
-        }
-
-        .ai-info-banner .close-btn {
-            background: transparent;
-            border: none;
-            color: var(--text-color);
-            cursor: pointer;
-            font-size: 18px;
-            padding: 4px;
-            opacity: 0.6;
-        }
-
-        .ai-info-banner .close-btn:hover {
-            opacity: 1;
         }
 
         /* Document container */
@@ -360,18 +303,6 @@ export class DocxPreviewEditorProvider implements vscode.CustomReadonlyEditorPro
             opacity: 0.8;
         }
 
-        /* AI Button in toolbar */
-        .ai-button {
-            background: linear-gradient(135deg, var(--accent-color), #6366f1) !important;
-            border: none !important;
-            color: white !important;
-        }
-
-        .ai-button:hover {
-            background: linear-gradient(135deg, var(--accent-hover), #818cf8) !important;
-            transform: scale(1.02);
-        }
-
         /* RTL document support */
         .document-content[dir="rtl"] {
             text-align: right;
@@ -395,18 +326,7 @@ export class DocxPreviewEditorProvider implements vscode.CustomReadonlyEditorPro
             <button id="toggleDir" title="تغییر جهت متن">↔️ تغییر جهت</button>
             <button id="zoomIn" title="بزرگ‌نمایی">🔍+</button>
             <button id="zoomOut" title="کوچک‌نمایی">🔍−</button>
-            <button id="askAI" class="ai-button" title="پرسش از هوش مصنوعی">🤖 پرسش از راد</button>
         </div>
-    </div>
-
-    <div class="ai-info-banner" id="aiBanner">
-        <span class="icon">🤖</span>
-        <span class="text">
-            <strong>دستیار راد</strong> می‌تواند محتوای این سند را بخواند و به سوالات شما درباره آن پاسخ دهد.
-            از او بخواهید خلاصه کند، ترجمه کند، یا نکات کلیدی را استخراج کند.
-        </span>
-        <button id="askAIBanner">شروع گفتگو</button>
-        <button class="close-btn" id="closeBanner" title="بستن">✕</button>
     </div>
 
     <div class="document-container">
@@ -428,7 +348,6 @@ export class DocxPreviewEditorProvider implements vscode.CustomReadonlyEditorPro
         // Elements
         const documentContent = document.getElementById('documentContent');
         const loading = document.getElementById('loading');
-        const aiBanner = document.getElementById('aiBanner');
 
         // Load and render document using mammoth.js approach
         async function loadDocument() {
@@ -446,7 +365,7 @@ export class DocxPreviewEditorProvider implements vscode.CustomReadonlyEditorPro
                 
                 documentContent.innerHTML = html;
                 
-                // Extract plain text for AI
+                // Extract plain text for reference
                 const plainText = documentContent.innerText;
                 vscode.postMessage({ type: 'extractedText', text: plainText });
 
@@ -455,61 +374,171 @@ export class DocxPreviewEditorProvider implements vscode.CustomReadonlyEditorPro
                     <div class="error-message">
                         <h2>خطا در بارگذاری سند</h2>
                         <p>\${error.message}</p>
-                        <p style="margin-top: 20px; opacity: 0.7;">
-                            💡 توجه: دستیار راد همچنان می‌تواند محتوای متنی این فایل را بخواند و به سوالات شما پاسخ دهد.
-                        </p>
                     </div>
                 \`;
                 vscode.postMessage({ type: 'error', message: error.message });
             }
         }
 
-        // Simple DOCX content extractor
+        // DOCX content extractor using ZIP and XML parsing
         async function extractDocxContent(data) {
-            // Create a Blob from the data
-            const blob = new Blob([data], { type: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' });
-            
-            // Use JSZip-like approach to read the docx
-            // For now, display a styled placeholder with the file info
-            // The actual text will be extracted by Radd Assistant's read_file tool
-            
-            return \`
-                <div style="text-align: center; padding: 40px;">
-                    <div style="font-size: 64px; margin-bottom: 20px;">📄</div>
-                    <h1 style="margin-bottom: 16px;">سند Word</h1>
-                    <p style="opacity: 0.7; margin-bottom: 30px;">
-                        این فایل یک سند Microsoft Word است.
-                    </p>
-                    <div style="background: var(--info-bg); padding: 24px; border-radius: 12px; text-align: right; max-width: 500px; margin: 0 auto;">
-                        <h3 style="color: var(--accent-color); margin-bottom: 12px;">🤖 قابلیت‌های دستیار راد:</h3>
-                        <ul style="list-style: none; line-height: 2;">
-                            <li>✅ خواندن و درک کامل محتوای سند</li>
-                            <li>✅ خلاصه‌سازی و استخراج نکات کلیدی</li>
-                            <li>✅ ترجمه به زبان‌های مختلف</li>
-                            <li>✅ پاسخ به سوالات درباره محتوا</li>
-                            <li>✅ تحلیل و مقایسه با سایر اسناد</li>
-                        </ul>
-                    </div>
-                    <button onclick="askAI()" style="
-                        margin-top: 24px;
-                        background: linear-gradient(135deg, var(--accent-color), #6366f1);
-                        border: none;
-                        color: white;
-                        padding: 14px 28px;
-                        border-radius: 8px;
-                        font-family: inherit;
-                        font-size: 15px;
-                        cursor: pointer;
-                        transition: transform 0.2s;
-                    " onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-                        🤖 شروع گفتگو با دستیار راد
-                    </button>
-                </div>
-            \`;
+            try {
+                // DOCX files are ZIP archives containing XML files
+                // We'll use the native Compression Streams API where available
+                // or a simple ZIP parser to extract document.xml
+                
+                const zip = await parseZip(data);
+                const documentXml = zip['word/document.xml'];
+                
+                if (!documentXml) {
+                    throw new Error('فایل word/document.xml یافت نشد');
+                }
+                
+                // Parse the XML and extract text content
+                const parser = new DOMParser();
+                const xmlDoc = parser.parseFromString(documentXml, 'application/xml');
+                
+                // Extract paragraphs from the document
+                const html = processDocumentXml(xmlDoc);
+                return html;
+                
+            } catch (error) {
+                console.error('Error extracting DOCX:', error);
+                throw error;
+            }
         }
-
-        function askAI() {
-            vscode.postMessage({ type: 'askAI' });
+        
+        // Simple ZIP parser for DOCX files
+        async function parseZip(data) {
+            const files = {};
+            let offset = 0;
+            const view = new DataView(data.buffer);
+            
+            while (offset < data.length - 4) {
+                const signature = view.getUint32(offset, true);
+                
+                // Local file header signature
+                if (signature === 0x04034b50) {
+                    const compressionMethod = view.getUint16(offset + 8, true);
+                    const compressedSize = view.getUint32(offset + 18, true);
+                    const uncompressedSize = view.getUint32(offset + 22, true);
+                    const fileNameLength = view.getUint16(offset + 26, true);
+                    const extraFieldLength = view.getUint16(offset + 28, true);
+                    
+                    const fileNameStart = offset + 30;
+                    const fileNameBytes = data.slice(fileNameStart, fileNameStart + fileNameLength);
+                    const fileName = new TextDecoder().decode(fileNameBytes);
+                    
+                    const dataStart = fileNameStart + fileNameLength + extraFieldLength;
+                    const fileData = data.slice(dataStart, dataStart + compressedSize);
+                    
+                    // Only process XML files we need
+                    if (fileName.endsWith('.xml') || fileName.endsWith('.rels')) {
+                        if (compressionMethod === 0) {
+                            // No compression
+                            files[fileName] = new TextDecoder().decode(fileData);
+                        } else if (compressionMethod === 8) {
+                            // Deflate compression - use DecompressionStream if available
+                            try {
+                                const blob = new Blob([fileData]);
+                                const ds = new DecompressionStream('deflate-raw');
+                                const decompressedStream = blob.stream().pipeThrough(ds);
+                                const decompressedBlob = await new Response(decompressedStream).blob();
+                                files[fileName] = await decompressedBlob.text();
+                            } catch (e) {
+                                console.warn('Decompression failed for:', fileName, e);
+                            }
+                        }
+                    }
+                    
+                    offset = dataStart + compressedSize;
+                } else if (signature === 0x02014b50) {
+                    // Central directory - we're done with file entries
+                    break;
+                } else {
+                    offset++;
+                }
+            }
+            
+            return files;
+        }
+        
+        // Process document.xml and convert to HTML
+        function processDocumentXml(xmlDoc) {
+            const ns = 'http://schemas.openxmlformats.org/wordprocessingml/2006/main';
+            let html = '';
+            
+            // Get all paragraph elements
+            const paragraphs = xmlDoc.getElementsByTagNameNS(ns, 'p');
+            
+            for (let i = 0; i < paragraphs.length; i++) {
+                const p = paragraphs[i];
+                let paragraphHtml = '';
+                let isHeading = false;
+                let headingLevel = 0;
+                
+                // Check for heading style
+                const pStyle = p.getElementsByTagNameNS(ns, 'pStyle')[0];
+                if (pStyle) {
+                    const styleVal = pStyle.getAttribute('w:val') || '';
+                    if (styleVal.match(/Heading(\\d)/i) || styleVal.match(/^\\d$/)) {
+                        isHeading = true;
+                        headingLevel = parseInt(styleVal.match(/\\d/)?.[0] || '1');
+                    }
+                }
+                
+                // Get all runs (text segments) in the paragraph
+                const runs = p.getElementsByTagNameNS(ns, 'r');
+                
+                for (let j = 0; j < runs.length; j++) {
+                    const run = runs[j];
+                    const texts = run.getElementsByTagNameNS(ns, 't');
+                    
+                    // Check formatting
+                    const rPr = run.getElementsByTagNameNS(ns, 'rPr')[0];
+                    let isBold = false;
+                    let isItalic = false;
+                    let isUnderline = false;
+                    
+                    if (rPr) {
+                        isBold = rPr.getElementsByTagNameNS(ns, 'b').length > 0;
+                        isItalic = rPr.getElementsByTagNameNS(ns, 'i').length > 0;
+                        isUnderline = rPr.getElementsByTagNameNS(ns, 'u').length > 0;
+                    }
+                    
+                    for (let k = 0; k < texts.length; k++) {
+                        let text = texts[k].textContent || '';
+                        
+                        // Escape HTML
+                        text = text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+                        
+                        // Apply formatting
+                        if (isBold) text = '<strong>' + text + '</strong>';
+                        if (isItalic) text = '<em>' + text + '</em>';
+                        if (isUnderline) text = '<u>' + text + '</u>';
+                        
+                        paragraphHtml += text;
+                    }
+                }
+                
+                // Wrap in appropriate tag
+                if (paragraphHtml.trim()) {
+                    if (isHeading && headingLevel >= 1 && headingLevel <= 6) {
+                        html += '<h' + headingLevel + '>' + paragraphHtml + '</h' + headingLevel + '>';
+                    } else {
+                        html += '<p>' + paragraphHtml + '</p>';
+                    }
+                } else {
+                    // Empty paragraph = line break
+                    html += '<br>';
+                }
+            }
+            
+            // Handle tables
+            const tables = xmlDoc.getElementsByTagNameNS(ns, 'tbl');
+            // Tables are more complex, for now just extract text
+            
+            return html || '<p style="opacity: 0.6; text-align: center;">محتوای متنی در این سند یافت نشد.</p>';
         }
 
         // Zoom functionality
@@ -529,11 +558,6 @@ export class DocxPreviewEditorProvider implements vscode.CustomReadonlyEditorPro
         document.getElementById('zoomIn').onclick = () => setZoom(currentZoom + 0.1);
         document.getElementById('zoomOut').onclick = () => setZoom(currentZoom - 0.1);
         document.getElementById('toggleDir').onclick = toggleDirection;
-        document.getElementById('askAI').onclick = askAI;
-        document.getElementById('askAIBanner').onclick = askAI;
-        document.getElementById('closeBanner').onclick = () => {
-            aiBanner.style.display = 'none';
-        };
 
         // Messages from extension
         window.addEventListener('message', event => {

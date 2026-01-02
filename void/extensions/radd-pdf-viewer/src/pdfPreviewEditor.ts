@@ -399,15 +399,6 @@ export class PdfPreviewEditorProvider implements vscode.CustomReadonlyEditorProv
             to { transform: rotate(360deg); }
         }
 
-        /* AI Integration button */
-        .ai-button {
-            background: linear-gradient(135deg, var(--accent-color), #6366f1) !important;
-            border: none !important;
-        }
-
-        .ai-button:hover {
-            background: linear-gradient(135deg, var(--accent-hover), #818cf8) !important;
-        }
 
         /* Error state */
         .error-message {
@@ -448,7 +439,6 @@ export class PdfPreviewEditorProvider implements vscode.CustomReadonlyEditorProv
         </div>
         <div class="toolbar-group">
             <button id="searchBtn" title="جستجو (Ctrl+F)">🔍 جستجو</button>
-            <button id="askAI" class="ai-button" title="پرسش از هوش مصنوعی">🤖 پرسش از راد</button>
         </div>
     </div>
 
@@ -720,7 +710,6 @@ export class PdfPreviewEditorProvider implements vscode.CustomReadonlyEditorProv
         document.getElementById('toggleSidebar').onclick = () => sidebar.classList.toggle('hidden');
         document.getElementById('searchBtn').onclick = () => searchPanel.classList.toggle('visible');
         document.getElementById('closeSearch').onclick = () => searchPanel.classList.remove('visible');
-        document.getElementById('askAI').onclick = () => vscode.postMessage({ type: 'askAI' });
         
         zoomSelect.onchange = () => setZoom(zoomSelect.value);
         pageInput.onchange = () => goToPage(parseInt(pageInput.value));
