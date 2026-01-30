@@ -29,8 +29,14 @@
 	--void-border-3: var(--vscode-commandCenter-inactiveBorder);
 	--void-border-4: var(--vscode-editorGroup-border);
 
-	--void-ring-color: #007FD4;
-	--void-link-color: #007FD4;
+	/* Premium Updates */
+	--void-ring-color: #4F46E5;
+	/* Indigo-600 for a more premium active state */
+	--void-link-color: #6366F1;
+	/* Indigo-500 */
+
+	--void-glass-bg: color-mix(in srgb, var(--vscode-editor-background) 70%, transparent);
+	--void-glass-border: color-mix(in srgb, var(--vscode-editor-foreground) 10%, transparent);
 }
 
 .select-child-restyle select {
@@ -49,7 +55,7 @@
 
 
 
-.inherit-bg-all-restyle > * {
+.inherit-bg-all-restyle>* {
 	background-color: inherit !important;
 }
 

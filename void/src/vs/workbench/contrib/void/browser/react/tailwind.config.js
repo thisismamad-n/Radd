@@ -74,6 +74,9 @@ module.exports = {
 				'void-ring-color': 'var(--void-ring-color)',
 				'void-link-color': 'var(--void-link-color)',
 
+				'void-glass-bg': 'var(--void-glass-bg)',
+				'void-glass-border': 'var(--void-glass-border)',
+
 				vscode: {
 					// see: https://code.visualstudio.com/api/extension-guides/webview#theming-webview-content
 

@@ -175,7 +175,7 @@
 		--chart-3: var(--vscode-charts-yellow);
 		--chart-4: var(--vscode-charts-orange);
 		--chart-5: var(--vscode-charts-green);
-		--radius: 0.5rem;
+		--radius: 0.75rem;
 	}
 
 	/* Higher specififty than VSCode's theme and root. */
