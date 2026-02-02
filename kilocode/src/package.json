@@ -134,11 +134,6 @@
 				"category": "Radd"
 			},
 			{
-				"command": "radd.openWelcome",
-				"title": "Open Radd Welcome",
-				"category": "Radd"
-			},
-			{
 				"command": "radd.createSampleWorkspace",
 				"title": "Create Sample Workspace",
 				"category": "Radd"

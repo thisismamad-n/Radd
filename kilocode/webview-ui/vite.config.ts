@@ -126,7 +126,6 @@ export default defineConfig(({ mode }) => {
 					"agent-manager": resolve(__dirname, "agent-manager.html"), // kilocode_change
 					"browser-panel": resolve(__dirname, "browser-panel.html"),
 					"onboarding": resolve(__dirname, "onboarding.html"), // kilocode_change
-					"welcome": resolve(__dirname, "welcome.html"), // kilocode_change
 				},
 				external: ["vscode"], // kilocode_change: we inadvertently import vscode into the webview: @roo/modes => src/shared/modes => ../core/prompts/sections/custom-instructions
 				output: {

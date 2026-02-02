@@ -53,7 +53,6 @@ import { ManagedIndexer } from "./services/code-index/managed/ManagedIndexer" //
 import { flushModels, getModels, initializeModelCacheRefresh } from "./api/providers/fetchers/modelCache"
 import { kilo_initializeSessionManager } from "./shared/kilocode/cli-sessions/extension/session-manager-utils" // kilocode_change
 import { OnboardingPanel } from "./onboarding/OnboardingPanel" // kilocode_change
-import { WelcomePanel } from "./welcome/WelcomePanel" // kilocode_change
 
 // kilocode_change start
 async function findKilocodeTokenFromAnyProfile(provider: ClineProvider): Promise<string | undefined> {
@@ -364,16 +363,6 @@ export async function activate(context: vscode.ExtensionContext) {
 			// For now, keep it compatible.
 			await context.globalState.update("firstInstallCompleted", true)
 		}
-	} else {
-		// If not first install, check if we should show welcome page
-		// Only if no editor is open and no workspace folder is open (or maybe even if workspace is open)
-		// For MVP, if no editor is active, show welcome.
-		if (!vscode.window.activeTextEditor) {
-			// Delay slightly to let layout settle
-			setTimeout(() => {
-				vscode.commands.executeCommand("radd.openWelcome")
-			}, 500)
-		}
 	}
 	// kilocode_change end
 
@@ -425,6 +414,14 @@ export async function activate(context: vscode.ExtensionContext) {
 	// kilocode_change end
 
 	registerCommands({ context, outputChannel, provider })
+
+	// kilocode_change start - Auto-open Agent Manager on startup
+	// Delay slightly to ensure the UI is ready
+	setTimeout(() => {
+		vscode.commands.executeCommand("radd-assistant.agentManagerOpen")
+		outputChannel.appendLine("Agent Manager panel auto-opened on startup")
+	}, 1000)
+	// kilocode_change end
 
 	/**
 	 * We use the text document content provider API to show the left side for diff
@@ -485,11 +482,6 @@ export async function activate(context: vscode.ExtensionContext) {
 		vscode.commands.registerCommand("radd.onboardingFinished", () => {
 			vscode.commands.executeCommand("workbench.action.closeActiveEditor")
 			vscode.commands.executeCommand("radd-assistant.SidebarProvider.focus")
-			// Open Welcome after onboarding
-			setTimeout(() => vscode.commands.executeCommand("radd.openWelcome"), 500)
-		}),
-		vscode.commands.registerCommand("radd.openWelcome", () => {
-			WelcomePanel.createOrShow(context)
 		}),
 		vscode.commands.registerCommand("radd.createSampleWorkspace", async () => {
 			const samplePath = path.join(context.extensionPath, "assets", "playground")

@@ -224,6 +224,16 @@ if (-not $SkipVoid) {
     Write-Success "Dependencies installed in $([math]::Round($timer.Elapsed.TotalSeconds, 2))s"
     Write-Info "Note: Skipped extensions with broken deps: $($SkipExtensions -join ', ')"
     
+    # Step 2.1.5: Download built-in extensions (One Dark Pro, Material Icon Theme)
+    Write-Info "Downloading built-in extensions (themes)..."
+    $timer = [System.Diagnostics.Stopwatch]::StartNew()
+    npm run download-builtin-extensions
+    if ($LASTEXITCODE -ne 0) { 
+        Write-ErrorMsg "Download built-in extensions failed! Continuing anyway..."
+    } else {
+        Write-Success "Built-in extensions downloaded in $([math]::Round($timer.Elapsed.TotalSeconds, 2))s"
+    }
+    
     # Step 2.2: Build React UI (Sidebar/Dashboard)
     Write-Info "Building React UI..."
     $timer = [System.Diagnostics.Stopwatch]::StartNew()

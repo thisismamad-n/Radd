@@ -36,7 +36,40 @@
 		"serviceUrl": "https://marketplace.visualstudio.com/_apis/public/gallery",
 		"itemUrl": "https://marketplace.visualstudio.com/items"
 	},
-	"builtInExtensions": [],
+	"builtInExtensions": [
+		{
+			"name": "zhuangtongfa.material-theme",
+			"version": "3.18.0",
+			"sha256": "",
+			"repo": "https://github.com/Binaryify/OneDark-Pro",
+			"metadata": {
+				"id": "26a529c9-2654-4b95-a63f-a331a18c4f72",
+				"publisherId": {
+					"publisherId": "8ae75bda-ec22-4a17-9340-abf1a20beca9",
+					"publisherName": "zhuangtongfa",
+					"displayName": "binaryify",
+					"flags": "verified"
+				},
+				"publisherDisplayName": "binaryify"
+			}
+		},
+		{
+			"name": "PKief.material-icon-theme",
+			"version": "5.20.0",
+			"sha256": "",
+			"repo": "https://github.com/PKief/vscode-material-icon-theme",
+			"metadata": {
+				"id": "a2c7d1e5-3c91-4e71-a7a9-1d8a4b87b8f3",
+				"publisherId": {
+					"publisherId": "19ead4e1-15df-42a9-96ce-49e9b8b9e0ef",
+					"publisherName": "PKief",
+					"displayName": "Philipp Kief",
+					"flags": "verified"
+				},
+				"publisherDisplayName": "Philipp Kief"
+			}
+		}
+	],
 	"linkProtectionTrustedDomains": [
 		"https://voideditor.com",
 		"https://voideditor.dev",
@@ -46,7 +79,10 @@
 		"https://fonts.gstatic.com"
 	],
 	"defaultLocale": "fa",
-	"supportedLocales": ["en", "fa"],
+	"supportedLocales": [
+		"en",
+		"fa"
+	],
 	"configurationDefaults": {
 		"window.titleBarStyle": "custom",
 		"window.menuBarVisibility": "classic",
@@ -58,6 +94,8 @@
 		"update.mode": "manual",
 		"extensions.autoUpdate": false,
 		"extensions.autoCheckUpdates": false,
-		"security.workspace.trust.enabled": false
+		"security.workspace.trust.enabled": false,
+		"workbench.colorTheme": "One Dark Pro",
+		"workbench.iconTheme": "material-icon-theme"
 	}
 }
